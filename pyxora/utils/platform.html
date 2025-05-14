@@ -128,59 +128,56 @@
 </span><span id="L-51"><a href="#L-51"><span class="linenos"> 51</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="L-52"><a href="#L-52"><span class="linenos"> 52</span></a><span class="sd">    Check if the current platform is Android.</span>
 </span><span id="L-53"><a href="#L-53"><span class="linenos"> 53</span></a>
-</span><span id="L-54"><a href="#L-54"><span class="linenos"> 54</span></a><span class="sd">    This works by checking for the `getandroidapilevel` attribute</span>
-</span><span id="L-55"><a href="#L-55"><span class="linenos"> 55</span></a><span class="sd">    added by Python-for-Android.</span>
-</span><span id="L-56"><a href="#L-56"><span class="linenos"> 56</span></a>
-</span><span id="L-57"><a href="#L-57"><span class="linenos"> 57</span></a><span class="sd">    Returns:</span>
-</span><span id="L-58"><a href="#L-58"><span class="linenos"> 58</span></a><span class="sd">        bool: True if on Android.</span>
-</span><span id="L-59"><a href="#L-59"><span class="linenos"> 59</span></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="L-60"><a href="#L-60"><span class="linenos"> 60</span></a>    <span class="k">return</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">sys</span><span class="p">,</span> <span class="s2">&quot;getandroidapilevel&quot;</span><span class="p">)</span>
-</span><span id="L-61"><a href="#L-61"><span class="linenos"> 61</span></a>
-</span><span id="L-62"><a href="#L-62"><span class="linenos"> 62</span></a>
-</span><span id="L-63"><a href="#L-63"><span class="linenos"> 63</span></a><span class="k">def</span><span class="w"> </span><span class="nf">is_local</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="L-64"><a href="#L-64"><span class="linenos"> 64</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-65"><a href="#L-65"><span class="linenos"> 65</span></a><span class="sd">    Check if the current platform is a local/native one (not web).</span>
-</span><span id="L-66"><a href="#L-66"><span class="linenos"> 66</span></a>
-</span><span id="L-67"><a href="#L-67"><span class="linenos"> 67</span></a><span class="sd">    Returns:</span>
-</span><span id="L-68"><a href="#L-68"><span class="linenos"> 68</span></a><span class="sd">        bool: True if running on Windows, Linux, macOS, or Android.</span>
-</span><span id="L-69"><a href="#L-69"><span class="linenos"> 69</span></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="L-70"><a href="#L-70"><span class="linenos"> 70</span></a>    <span class="k">return</span> <span class="n">is_windows</span><span class="p">()</span> <span class="ow">or</span> <span class="n">is_linux</span><span class="p">()</span> <span class="ow">or</span> <span class="n">is_mac</span><span class="p">()</span> <span class="ow">or</span> <span class="n">is_android</span><span class="p">()</span>
-</span><span id="L-71"><a href="#L-71"><span class="linenos"> 71</span></a>
-</span><span id="L-72"><a href="#L-72"><span class="linenos"> 72</span></a>
-</span><span id="L-73"><a href="#L-73"><span class="linenos"> 73</span></a><span class="k">def</span><span class="w"> </span><span class="nf">is_web</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="L-74"><a href="#L-74"><span class="linenos"> 74</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-75"><a href="#L-75"><span class="linenos"> 75</span></a><span class="sd">    Check if the game is running in a web environment (Emscripten).</span>
-</span><span id="L-76"><a href="#L-76"><span class="linenos"> 76</span></a>
-</span><span id="L-77"><a href="#L-77"><span class="linenos"> 77</span></a><span class="sd">    Returns:</span>
-</span><span id="L-78"><a href="#L-78"><span class="linenos"> 78</span></a><span class="sd">        bool: True if compiled with Emscripten and running in a browser.</span>
-</span><span id="L-79"><a href="#L-79"><span class="linenos"> 79</span></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="L-80"><a href="#L-80"><span class="linenos"> 80</span></a>    <span class="k">return</span> <span class="n">get_platform</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;emscripten&quot;</span>
-</span><span id="L-81"><a href="#L-81"><span class="linenos"> 81</span></a>
-</span><span id="L-82"><a href="#L-82"><span class="linenos"> 82</span></a>
-</span><span id="L-83"><a href="#L-83"><span class="linenos"> 83</span></a><span class="k">def</span><span class="w"> </span><span class="nf">get_web_platform</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="L-84"><a href="#L-84"><span class="linenos"> 84</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="L-85"><a href="#L-85"><span class="linenos"> 85</span></a><span class="sd">    Attempt to determine the user&#39;s OS/platform from the browser user agent.</span>
+</span><span id="L-54"><a href="#L-54"><span class="linenos"> 54</span></a><span class="sd">    Returns:</span>
+</span><span id="L-55"><a href="#L-55"><span class="linenos"> 55</span></a><span class="sd">        bool: True if on Android.</span>
+</span><span id="L-56"><a href="#L-56"><span class="linenos"> 56</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="L-57"><a href="#L-57"><span class="linenos"> 57</span></a>    <span class="k">return</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">sys</span><span class="p">,</span> <span class="s2">&quot;getandroidapilevel&quot;</span><span class="p">)</span>
+</span><span id="L-58"><a href="#L-58"><span class="linenos"> 58</span></a>
+</span><span id="L-59"><a href="#L-59"><span class="linenos"> 59</span></a>
+</span><span id="L-60"><a href="#L-60"><span class="linenos"> 60</span></a><span class="k">def</span><span class="w"> </span><span class="nf">is_local</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="L-61"><a href="#L-61"><span class="linenos"> 61</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-62"><a href="#L-62"><span class="linenos"> 62</span></a><span class="sd">    Check if the current platform is a local/native one (not web).</span>
+</span><span id="L-63"><a href="#L-63"><span class="linenos"> 63</span></a>
+</span><span id="L-64"><a href="#L-64"><span class="linenos"> 64</span></a><span class="sd">    Returns:</span>
+</span><span id="L-65"><a href="#L-65"><span class="linenos"> 65</span></a><span class="sd">        bool: True if running on Windows, Linux, macOS, or Android.</span>
+</span><span id="L-66"><a href="#L-66"><span class="linenos"> 66</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="L-67"><a href="#L-67"><span class="linenos"> 67</span></a>    <span class="k">return</span> <span class="n">is_windows</span><span class="p">()</span> <span class="ow">or</span> <span class="n">is_linux</span><span class="p">()</span> <span class="ow">or</span> <span class="n">is_mac</span><span class="p">()</span> <span class="ow">or</span> <span class="n">is_android</span><span class="p">()</span>
+</span><span id="L-68"><a href="#L-68"><span class="linenos"> 68</span></a>
+</span><span id="L-69"><a href="#L-69"><span class="linenos"> 69</span></a>
+</span><span id="L-70"><a href="#L-70"><span class="linenos"> 70</span></a><span class="k">def</span><span class="w"> </span><span class="nf">is_web</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="L-71"><a href="#L-71"><span class="linenos"> 71</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-72"><a href="#L-72"><span class="linenos"> 72</span></a><span class="sd">    Check if the game is running in a web environment (Emscripten).</span>
+</span><span id="L-73"><a href="#L-73"><span class="linenos"> 73</span></a>
+</span><span id="L-74"><a href="#L-74"><span class="linenos"> 74</span></a><span class="sd">    Returns:</span>
+</span><span id="L-75"><a href="#L-75"><span class="linenos"> 75</span></a><span class="sd">        bool: True if compiled with Emscripten and running in a browser.</span>
+</span><span id="L-76"><a href="#L-76"><span class="linenos"> 76</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="L-77"><a href="#L-77"><span class="linenos"> 77</span></a>    <span class="k">return</span> <span class="n">get_platform</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;emscripten&quot;</span>
+</span><span id="L-78"><a href="#L-78"><span class="linenos"> 78</span></a>
+</span><span id="L-79"><a href="#L-79"><span class="linenos"> 79</span></a>
+</span><span id="L-80"><a href="#L-80"><span class="linenos"> 80</span></a><span class="k">def</span><span class="w"> </span><span class="nf">get_web_platform</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="L-81"><a href="#L-81"><span class="linenos"> 81</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-82"><a href="#L-82"><span class="linenos"> 82</span></a><span class="sd">    Attempt to determine the user&#39;s OS/platform from the browser user agent.</span>
+</span><span id="L-83"><a href="#L-83"><span class="linenos"> 83</span></a>
+</span><span id="L-84"><a href="#L-84"><span class="linenos"> 84</span></a><span class="sd">    Only works if running in a web context (via Emscripten). Parses</span>
+</span><span id="L-85"><a href="#L-85"><span class="linenos"> 85</span></a><span class="sd">    the JavaScript `navigator.userAgent`.</span>
 </span><span id="L-86"><a href="#L-86"><span class="linenos"> 86</span></a>
-</span><span id="L-87"><a href="#L-87"><span class="linenos"> 87</span></a><span class="sd">    Only works if running in a web context (via Emscripten). Parses</span>
-</span><span id="L-88"><a href="#L-88"><span class="linenos"> 88</span></a><span class="sd">    the JavaScript `navigator.userAgent`.</span>
-</span><span id="L-89"><a href="#L-89"><span class="linenos"> 89</span></a>
-</span><span id="L-90"><a href="#L-90"><span class="linenos"> 90</span></a><span class="sd">    Returns:</span>
-</span><span id="L-91"><a href="#L-91"><span class="linenos"> 91</span></a><span class="sd">        str | None: One of [&#39;ios&#39;, &#39;android&#39;, &#39;win&#39;, &#39;mac&#39;, &#39;linux&#39;, &#39;unknown&#39;], or None if not in web.</span>
-</span><span id="L-92"><a href="#L-92"><span class="linenos"> 92</span></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="L-93"><a href="#L-93"><span class="linenos"> 93</span></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_web</span><span class="p">():</span>
-</span><span id="L-94"><a href="#L-94"><span class="linenos"> 94</span></a>        <span class="k">return</span> <span class="kc">None</span>
-</span><span id="L-95"><a href="#L-95"><span class="linenos"> 95</span></a>
-</span><span id="L-96"><a href="#L-96"><span class="linenos"> 96</span></a>    <span class="c1"># Import JavaScript interop module available in Pyodide/Emscripten</span>
-</span><span id="L-97"><a href="#L-97"><span class="linenos"> 97</span></a>    <span class="n">user_agent</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="s2">&quot;js&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">navigator</span><span class="o">.</span><span class="n">userAgent</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-</span><span id="L-98"><a href="#L-98"><span class="linenos"> 98</span></a>    <span class="n">web_platforms</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="L-99"><a href="#L-99"><span class="linenos"> 99</span></a>        <span class="s2">&quot;iphone&quot;</span><span class="p">:</span> <span class="s2">&quot;ios&quot;</span><span class="p">,</span>
-</span><span id="L-100"><a href="#L-100"><span class="linenos">100</span></a>        <span class="s2">&quot;ipad&quot;</span><span class="p">:</span> <span class="s2">&quot;ios&quot;</span><span class="p">,</span>
-</span><span id="L-101"><a href="#L-101"><span class="linenos">101</span></a>        <span class="s2">&quot;android&quot;</span><span class="p">:</span> <span class="s2">&quot;android&quot;</span><span class="p">,</span>
-</span><span id="L-102"><a href="#L-102"><span class="linenos">102</span></a>        <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="s2">&quot;win&quot;</span><span class="p">,</span>
-</span><span id="L-103"><a href="#L-103"><span class="linenos">103</span></a>        <span class="s2">&quot;macintosh&quot;</span><span class="p">:</span> <span class="s2">&quot;mac&quot;</span><span class="p">,</span>
-</span><span id="L-104"><a href="#L-104"><span class="linenos">104</span></a>        <span class="s2">&quot;linux&quot;</span><span class="p">:</span> <span class="s2">&quot;linux&quot;</span>
-</span><span id="L-105"><a href="#L-105"><span class="linenos">105</span></a>    <span class="p">}</span>
-</span><span id="L-106"><a href="#L-106"><span class="linenos">106</span></a>    <span class="k">return</span> <span class="nb">next</span><span class="p">((</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">web_platforms</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">user_agent</span><span class="p">),</span> <span class="s2">&quot;unknown&quot;</span><span class="p">)</span>
+</span><span id="L-87"><a href="#L-87"><span class="linenos"> 87</span></a><span class="sd">    Returns:</span>
+</span><span id="L-88"><a href="#L-88"><span class="linenos"> 88</span></a><span class="sd">        str | None: One of [&#39;ios&#39;, &#39;android&#39;, &#39;win&#39;, &#39;mac&#39;, &#39;linux&#39;, &#39;unknown&#39;], or None if not in web.</span>
+</span><span id="L-89"><a href="#L-89"><span class="linenos"> 89</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="L-90"><a href="#L-90"><span class="linenos"> 90</span></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_web</span><span class="p">():</span>
+</span><span id="L-91"><a href="#L-91"><span class="linenos"> 91</span></a>        <span class="k">return</span> <span class="kc">None</span>
+</span><span id="L-92"><a href="#L-92"><span class="linenos"> 92</span></a>
+</span><span id="L-93"><a href="#L-93"><span class="linenos"> 93</span></a>    <span class="c1"># Import JavaScript interop module available in Pyodide/Emscripten</span>
+</span><span id="L-94"><a href="#L-94"><span class="linenos"> 94</span></a>    <span class="n">user_agent</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="s2">&quot;js&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">navigator</span><span class="o">.</span><span class="n">userAgent</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</span><span id="L-95"><a href="#L-95"><span class="linenos"> 95</span></a>    <span class="n">web_platforms</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="L-96"><a href="#L-96"><span class="linenos"> 96</span></a>        <span class="s2">&quot;iphone&quot;</span><span class="p">:</span> <span class="s2">&quot;ios&quot;</span><span class="p">,</span>
+</span><span id="L-97"><a href="#L-97"><span class="linenos"> 97</span></a>        <span class="s2">&quot;ipad&quot;</span><span class="p">:</span> <span class="s2">&quot;ios&quot;</span><span class="p">,</span>
+</span><span id="L-98"><a href="#L-98"><span class="linenos"> 98</span></a>        <span class="s2">&quot;android&quot;</span><span class="p">:</span> <span class="s2">&quot;android&quot;</span><span class="p">,</span>
+</span><span id="L-99"><a href="#L-99"><span class="linenos"> 99</span></a>        <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="s2">&quot;win&quot;</span><span class="p">,</span>
+</span><span id="L-100"><a href="#L-100"><span class="linenos">100</span></a>        <span class="s2">&quot;macintosh&quot;</span><span class="p">:</span> <span class="s2">&quot;mac&quot;</span><span class="p">,</span>
+</span><span id="L-101"><a href="#L-101"><span class="linenos">101</span></a>        <span class="s2">&quot;linux&quot;</span><span class="p">:</span> <span class="s2">&quot;linux&quot;</span>
+</span><span id="L-102"><a href="#L-102"><span class="linenos">102</span></a>    <span class="p">}</span>
+</span><span id="L-103"><a href="#L-103"><span class="linenos">103</span></a>    <span class="k">return</span> <span class="nb">next</span><span class="p">((</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">web_platforms</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">user_agent</span><span class="p">),</span> <span class="s2">&quot;unknown&quot;</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -229,30 +226,30 @@
 
     </div>
     <a class="headerlink" href="#get_web_platform"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="get_web_platform-84"><a href="#get_web_platform-84"><span class="linenos"> 84</span></a><span class="k">def</span><span class="w"> </span><span class="nf">get_web_platform</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="get_web_platform-85"><a href="#get_web_platform-85"><span class="linenos"> 85</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="get_web_platform-86"><a href="#get_web_platform-86"><span class="linenos"> 86</span></a><span class="sd">    Attempt to determine the user&#39;s OS/platform from the browser user agent.</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="get_web_platform-81"><a href="#get_web_platform-81"><span class="linenos"> 81</span></a><span class="k">def</span><span class="w"> </span><span class="nf">get_web_platform</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="get_web_platform-82"><a href="#get_web_platform-82"><span class="linenos"> 82</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="get_web_platform-83"><a href="#get_web_platform-83"><span class="linenos"> 83</span></a><span class="sd">    Attempt to determine the user&#39;s OS/platform from the browser user agent.</span>
+</span><span id="get_web_platform-84"><a href="#get_web_platform-84"><span class="linenos"> 84</span></a>
+</span><span id="get_web_platform-85"><a href="#get_web_platform-85"><span class="linenos"> 85</span></a><span class="sd">    Only works if running in a web context (via Emscripten). Parses</span>
+</span><span id="get_web_platform-86"><a href="#get_web_platform-86"><span class="linenos"> 86</span></a><span class="sd">    the JavaScript `navigator.userAgent`.</span>
 </span><span id="get_web_platform-87"><a href="#get_web_platform-87"><span class="linenos"> 87</span></a>
-</span><span id="get_web_platform-88"><a href="#get_web_platform-88"><span class="linenos"> 88</span></a><span class="sd">    Only works if running in a web context (via Emscripten). Parses</span>
-</span><span id="get_web_platform-89"><a href="#get_web_platform-89"><span class="linenos"> 89</span></a><span class="sd">    the JavaScript `navigator.userAgent`.</span>
-</span><span id="get_web_platform-90"><a href="#get_web_platform-90"><span class="linenos"> 90</span></a>
-</span><span id="get_web_platform-91"><a href="#get_web_platform-91"><span class="linenos"> 91</span></a><span class="sd">    Returns:</span>
-</span><span id="get_web_platform-92"><a href="#get_web_platform-92"><span class="linenos"> 92</span></a><span class="sd">        str | None: One of [&#39;ios&#39;, &#39;android&#39;, &#39;win&#39;, &#39;mac&#39;, &#39;linux&#39;, &#39;unknown&#39;], or None if not in web.</span>
-</span><span id="get_web_platform-93"><a href="#get_web_platform-93"><span class="linenos"> 93</span></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="get_web_platform-94"><a href="#get_web_platform-94"><span class="linenos"> 94</span></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_web</span><span class="p">():</span>
-</span><span id="get_web_platform-95"><a href="#get_web_platform-95"><span class="linenos"> 95</span></a>        <span class="k">return</span> <span class="kc">None</span>
-</span><span id="get_web_platform-96"><a href="#get_web_platform-96"><span class="linenos"> 96</span></a>
-</span><span id="get_web_platform-97"><a href="#get_web_platform-97"><span class="linenos"> 97</span></a>    <span class="c1"># Import JavaScript interop module available in Pyodide/Emscripten</span>
-</span><span id="get_web_platform-98"><a href="#get_web_platform-98"><span class="linenos"> 98</span></a>    <span class="n">user_agent</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="s2">&quot;js&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">navigator</span><span class="o">.</span><span class="n">userAgent</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-</span><span id="get_web_platform-99"><a href="#get_web_platform-99"><span class="linenos"> 99</span></a>    <span class="n">web_platforms</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="get_web_platform-100"><a href="#get_web_platform-100"><span class="linenos">100</span></a>        <span class="s2">&quot;iphone&quot;</span><span class="p">:</span> <span class="s2">&quot;ios&quot;</span><span class="p">,</span>
-</span><span id="get_web_platform-101"><a href="#get_web_platform-101"><span class="linenos">101</span></a>        <span class="s2">&quot;ipad&quot;</span><span class="p">:</span> <span class="s2">&quot;ios&quot;</span><span class="p">,</span>
-</span><span id="get_web_platform-102"><a href="#get_web_platform-102"><span class="linenos">102</span></a>        <span class="s2">&quot;android&quot;</span><span class="p">:</span> <span class="s2">&quot;android&quot;</span><span class="p">,</span>
-</span><span id="get_web_platform-103"><a href="#get_web_platform-103"><span class="linenos">103</span></a>        <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="s2">&quot;win&quot;</span><span class="p">,</span>
-</span><span id="get_web_platform-104"><a href="#get_web_platform-104"><span class="linenos">104</span></a>        <span class="s2">&quot;macintosh&quot;</span><span class="p">:</span> <span class="s2">&quot;mac&quot;</span><span class="p">,</span>
-</span><span id="get_web_platform-105"><a href="#get_web_platform-105"><span class="linenos">105</span></a>        <span class="s2">&quot;linux&quot;</span><span class="p">:</span> <span class="s2">&quot;linux&quot;</span>
-</span><span id="get_web_platform-106"><a href="#get_web_platform-106"><span class="linenos">106</span></a>    <span class="p">}</span>
-</span><span id="get_web_platform-107"><a href="#get_web_platform-107"><span class="linenos">107</span></a>    <span class="k">return</span> <span class="nb">next</span><span class="p">((</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">web_platforms</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">user_agent</span><span class="p">),</span> <span class="s2">&quot;unknown&quot;</span><span class="p">)</span>
+</span><span id="get_web_platform-88"><a href="#get_web_platform-88"><span class="linenos"> 88</span></a><span class="sd">    Returns:</span>
+</span><span id="get_web_platform-89"><a href="#get_web_platform-89"><span class="linenos"> 89</span></a><span class="sd">        str | None: One of [&#39;ios&#39;, &#39;android&#39;, &#39;win&#39;, &#39;mac&#39;, &#39;linux&#39;, &#39;unknown&#39;], or None if not in web.</span>
+</span><span id="get_web_platform-90"><a href="#get_web_platform-90"><span class="linenos"> 90</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="get_web_platform-91"><a href="#get_web_platform-91"><span class="linenos"> 91</span></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_web</span><span class="p">():</span>
+</span><span id="get_web_platform-92"><a href="#get_web_platform-92"><span class="linenos"> 92</span></a>        <span class="k">return</span> <span class="kc">None</span>
+</span><span id="get_web_platform-93"><a href="#get_web_platform-93"><span class="linenos"> 93</span></a>
+</span><span id="get_web_platform-94"><a href="#get_web_platform-94"><span class="linenos"> 94</span></a>    <span class="c1"># Import JavaScript interop module available in Pyodide/Emscripten</span>
+</span><span id="get_web_platform-95"><a href="#get_web_platform-95"><span class="linenos"> 95</span></a>    <span class="n">user_agent</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="s2">&quot;js&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">navigator</span><span class="o">.</span><span class="n">userAgent</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</span><span id="get_web_platform-96"><a href="#get_web_platform-96"><span class="linenos"> 96</span></a>    <span class="n">web_platforms</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="get_web_platform-97"><a href="#get_web_platform-97"><span class="linenos"> 97</span></a>        <span class="s2">&quot;iphone&quot;</span><span class="p">:</span> <span class="s2">&quot;ios&quot;</span><span class="p">,</span>
+</span><span id="get_web_platform-98"><a href="#get_web_platform-98"><span class="linenos"> 98</span></a>        <span class="s2">&quot;ipad&quot;</span><span class="p">:</span> <span class="s2">&quot;ios&quot;</span><span class="p">,</span>
+</span><span id="get_web_platform-99"><a href="#get_web_platform-99"><span class="linenos"> 99</span></a>        <span class="s2">&quot;android&quot;</span><span class="p">:</span> <span class="s2">&quot;android&quot;</span><span class="p">,</span>
+</span><span id="get_web_platform-100"><a href="#get_web_platform-100"><span class="linenos">100</span></a>        <span class="s2">&quot;windows&quot;</span><span class="p">:</span> <span class="s2">&quot;win&quot;</span><span class="p">,</span>
+</span><span id="get_web_platform-101"><a href="#get_web_platform-101"><span class="linenos">101</span></a>        <span class="s2">&quot;macintosh&quot;</span><span class="p">:</span> <span class="s2">&quot;mac&quot;</span><span class="p">,</span>
+</span><span id="get_web_platform-102"><a href="#get_web_platform-102"><span class="linenos">102</span></a>        <span class="s2">&quot;linux&quot;</span><span class="p">:</span> <span class="s2">&quot;linux&quot;</span>
+</span><span id="get_web_platform-103"><a href="#get_web_platform-103"><span class="linenos">103</span></a>    <span class="p">}</span>
+</span><span id="get_web_platform-104"><a href="#get_web_platform-104"><span class="linenos">104</span></a>    <span class="k">return</span> <span class="nb">next</span><span class="p">((</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">web_platforms</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">user_agent</span><span class="p">),</span> <span class="s2">&quot;unknown&quot;</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -281,14 +278,14 @@ the JavaScript <code>navigator.userAgent</code>.</p>
 
     </div>
     <a class="headerlink" href="#is_web"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="is_web-74"><a href="#is_web-74"><span class="linenos">74</span></a><span class="k">def</span><span class="w"> </span><span class="nf">is_web</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="is_web-75"><a href="#is_web-75"><span class="linenos">75</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="is_web-76"><a href="#is_web-76"><span class="linenos">76</span></a><span class="sd">    Check if the game is running in a web environment (Emscripten).</span>
-</span><span id="is_web-77"><a href="#is_web-77"><span class="linenos">77</span></a>
-</span><span id="is_web-78"><a href="#is_web-78"><span class="linenos">78</span></a><span class="sd">    Returns:</span>
-</span><span id="is_web-79"><a href="#is_web-79"><span class="linenos">79</span></a><span class="sd">        bool: True if compiled with Emscripten and running in a browser.</span>
-</span><span id="is_web-80"><a href="#is_web-80"><span class="linenos">80</span></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="is_web-81"><a href="#is_web-81"><span class="linenos">81</span></a>    <span class="k">return</span> <span class="n">get_platform</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;emscripten&quot;</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="is_web-71"><a href="#is_web-71"><span class="linenos">71</span></a><span class="k">def</span><span class="w"> </span><span class="nf">is_web</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="is_web-72"><a href="#is_web-72"><span class="linenos">72</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="is_web-73"><a href="#is_web-73"><span class="linenos">73</span></a><span class="sd">    Check if the game is running in a web environment (Emscripten).</span>
+</span><span id="is_web-74"><a href="#is_web-74"><span class="linenos">74</span></a>
+</span><span id="is_web-75"><a href="#is_web-75"><span class="linenos">75</span></a><span class="sd">    Returns:</span>
+</span><span id="is_web-76"><a href="#is_web-76"><span class="linenos">76</span></a><span class="sd">        bool: True if compiled with Emscripten and running in a browser.</span>
+</span><span id="is_web-77"><a href="#is_web-77"><span class="linenos">77</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="is_web-78"><a href="#is_web-78"><span class="linenos">78</span></a>    <span class="k">return</span> <span class="n">get_platform</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;emscripten&quot;</span>
 </span></pre></div>
 
 
@@ -314,14 +311,14 @@ the JavaScript <code>navigator.userAgent</code>.</p>
 
     </div>
     <a class="headerlink" href="#is_local"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="is_local-64"><a href="#is_local-64"><span class="linenos">64</span></a><span class="k">def</span><span class="w"> </span><span class="nf">is_local</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="is_local-65"><a href="#is_local-65"><span class="linenos">65</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="is_local-66"><a href="#is_local-66"><span class="linenos">66</span></a><span class="sd">    Check if the current platform is a local/native one (not web).</span>
-</span><span id="is_local-67"><a href="#is_local-67"><span class="linenos">67</span></a>
-</span><span id="is_local-68"><a href="#is_local-68"><span class="linenos">68</span></a><span class="sd">    Returns:</span>
-</span><span id="is_local-69"><a href="#is_local-69"><span class="linenos">69</span></a><span class="sd">        bool: True if running on Windows, Linux, macOS, or Android.</span>
-</span><span id="is_local-70"><a href="#is_local-70"><span class="linenos">70</span></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="is_local-71"><a href="#is_local-71"><span class="linenos">71</span></a>    <span class="k">return</span> <span class="n">is_windows</span><span class="p">()</span> <span class="ow">or</span> <span class="n">is_linux</span><span class="p">()</span> <span class="ow">or</span> <span class="n">is_mac</span><span class="p">()</span> <span class="ow">or</span> <span class="n">is_android</span><span class="p">()</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="is_local-61"><a href="#is_local-61"><span class="linenos">61</span></a><span class="k">def</span><span class="w"> </span><span class="nf">is_local</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="is_local-62"><a href="#is_local-62"><span class="linenos">62</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="is_local-63"><a href="#is_local-63"><span class="linenos">63</span></a><span class="sd">    Check if the current platform is a local/native one (not web).</span>
+</span><span id="is_local-64"><a href="#is_local-64"><span class="linenos">64</span></a>
+</span><span id="is_local-65"><a href="#is_local-65"><span class="linenos">65</span></a><span class="sd">    Returns:</span>
+</span><span id="is_local-66"><a href="#is_local-66"><span class="linenos">66</span></a><span class="sd">        bool: True if running on Windows, Linux, macOS, or Android.</span>
+</span><span id="is_local-67"><a href="#is_local-67"><span class="linenos">67</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="is_local-68"><a href="#is_local-68"><span class="linenos">68</span></a>    <span class="k">return</span> <span class="n">is_windows</span><span class="p">()</span> <span class="ow">or</span> <span class="n">is_linux</span><span class="p">()</span> <span class="ow">or</span> <span class="n">is_mac</span><span class="p">()</span> <span class="ow">or</span> <span class="n">is_android</span><span class="p">()</span>
 </span></pre></div>
 
 
@@ -450,20 +447,14 @@ the JavaScript <code>navigator.userAgent</code>.</p>
 </span><span id="is_android-52"><a href="#is_android-52"><span class="linenos">52</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="is_android-53"><a href="#is_android-53"><span class="linenos">53</span></a><span class="sd">    Check if the current platform is Android.</span>
 </span><span id="is_android-54"><a href="#is_android-54"><span class="linenos">54</span></a>
-</span><span id="is_android-55"><a href="#is_android-55"><span class="linenos">55</span></a><span class="sd">    This works by checking for the `getandroidapilevel` attribute</span>
-</span><span id="is_android-56"><a href="#is_android-56"><span class="linenos">56</span></a><span class="sd">    added by Python-for-Android.</span>
-</span><span id="is_android-57"><a href="#is_android-57"><span class="linenos">57</span></a>
-</span><span id="is_android-58"><a href="#is_android-58"><span class="linenos">58</span></a><span class="sd">    Returns:</span>
-</span><span id="is_android-59"><a href="#is_android-59"><span class="linenos">59</span></a><span class="sd">        bool: True if on Android.</span>
-</span><span id="is_android-60"><a href="#is_android-60"><span class="linenos">60</span></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="is_android-61"><a href="#is_android-61"><span class="linenos">61</span></a>    <span class="k">return</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">sys</span><span class="p">,</span> <span class="s2">&quot;getandroidapilevel&quot;</span><span class="p">)</span>
+</span><span id="is_android-55"><a href="#is_android-55"><span class="linenos">55</span></a><span class="sd">    Returns:</span>
+</span><span id="is_android-56"><a href="#is_android-56"><span class="linenos">56</span></a><span class="sd">        bool: True if on Android.</span>
+</span><span id="is_android-57"><a href="#is_android-57"><span class="linenos">57</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="is_android-58"><a href="#is_android-58"><span class="linenos">58</span></a>    <span class="k">return</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">sys</span><span class="p">,</span> <span class="s2">&quot;getandroidapilevel&quot;</span><span class="p">)</span>
 </span></pre></div>
 
 
             <div class="docstring"><p>Check if the current platform is Android.</p>
-
-<p>This works by checking for the <code>getandroidapilevel</code> attribute
-added by Python-for-Android.</p>
 
 <h6 id="returns">Returns:</h6>
 

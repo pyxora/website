@@ -578,7 +578,7 @@
 </span><span id="L-366"><a href="#L-366"><span class="linenos">366</span></a>    <span class="n">global_runtime</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="L-367"><a href="#L-367"><span class="linenos">367</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot; global_pausetime: The global runtime for all the scenes.&quot;&quot;&quot;</span>    
 </span><span id="L-368"><a href="#L-368"><span class="linenos">368</span></a>    <span class="n">global_pausetime</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="L-369"><a href="#L-369"><span class="linenos">369</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot; global_runtime: The global pausetime for all the scenes.&quot;&quot;&quot;</span>    
+</span><span id="L-369"><a href="#L-369"><span class="linenos">369</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot; global_runtime: The global pause time for all the scenes.&quot;&quot;&quot;</span>    
 </span><span id="L-370"><a href="#L-370"><span class="linenos">370</span></a>    <span class="n">_global_start_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
 </span><span id="L-371"><a href="#L-371"><span class="linenos">371</span></a>
 </span><span id="L-372"><a href="#L-372"><span class="linenos">372</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -630,10 +630,10 @@
 </span><span id="L-418"><a href="#L-418"><span class="linenos">418</span></a>
 </span><span id="L-419"><a href="#L-419"><span class="linenos">419</span></a>    <span class="c1"># Paused Lifecycle Methods</span>
 </span><span id="L-420"><a href="#L-420"><span class="linenos">420</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_paused_update</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="L-421"><a href="#L-421"><span class="linenos">421</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called every paused frame to update scene logic. Override this func in your subclass&quot;&quot;&quot;</span>
+</span><span id="L-421"><a href="#L-421"><span class="linenos">421</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called every paused frame to update scene logic. Override this func in your subclass.&quot;&quot;&quot;</span>
 </span><span id="L-422"><a href="#L-422"><span class="linenos">422</span></a>        <span class="k">pass</span>
 </span><span id="L-423"><a href="#L-423"><span class="linenos">423</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_paused_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="L-424"><a href="#L-424"><span class="linenos">424</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called every paused frame to draw elements to the screen. Override this func in your subclass&quot;&quot;&quot;</span>        
+</span><span id="L-424"><a href="#L-424"><span class="linenos">424</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called every paused frame to draw elements to the screen. Override this func in your subclass.&quot;&quot;&quot;</span>        
 </span><span id="L-425"><a href="#L-425"><span class="linenos">425</span></a>        <span class="k">pass</span>
 </span><span id="L-426"><a href="#L-426"><span class="linenos">426</span></a>
 </span><span id="L-427"><a href="#L-427"><span class="linenos">427</span></a>    <span class="c1"># Scene State Change Methods</span>
@@ -644,7 +644,7 @@
 </span><span id="L-432"><a href="#L-432"><span class="linenos">432</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called once at the scene quit &quot;Scene.quit()&quot;. Override this func in your subclass to add code.&quot;&quot;&quot;</span>
 </span><span id="L-433"><a href="#L-433"><span class="linenos">433</span></a>        <span class="k">pass</span>
 </span><span id="L-434"><a href="#L-434"><span class="linenos">434</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_on_resume</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="L-435"><a href="#L-435"><span class="linenos">435</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called once at the scene resune &quot;Scene.resume()&quot;. Override this func in your subclass to add code.&quot;&quot;&quot;</span>
+</span><span id="L-435"><a href="#L-435"><span class="linenos">435</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called once at the scene resume &quot;Scene.resume()&quot;. Override this func in your subclass to add code.&quot;&quot;&quot;</span>
 </span><span id="L-436"><a href="#L-436"><span class="linenos">436</span></a>        <span class="k">pass</span>
 </span><span id="L-437"><a href="#L-437"><span class="linenos">437</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_on_pause</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="L-438"><a href="#L-438"><span class="linenos">438</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called once at the scene pause &quot;Scene.pause()&quot;. Override this func in your subclass to add code.&quot;&quot;&quot;</span>
@@ -675,7 +675,7 @@
 </span><span id="L-463"><a href="#L-463"><span class="linenos">463</span></a><span class="sd">        Called every keyboard keydown. Override this func in your subclass to add code.</span>
 </span><span id="L-464"><a href="#L-464"><span class="linenos">464</span></a>
 </span><span id="L-465"><a href="#L-465"><span class="linenos">465</span></a><span class="sd">        Args:</span>
-</span><span id="L-466"><a href="#L-466"><span class="linenos">466</span></a><span class="sd">            key (str): The keybaord key</span>
+</span><span id="L-466"><a href="#L-466"><span class="linenos">466</span></a><span class="sd">            key (str): The keyboard key.</span>
 </span><span id="L-467"><a href="#L-467"><span class="linenos">467</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="L-468"><a href="#L-468"><span class="linenos">468</span></a>        <span class="k">pass</span>
 </span><span id="L-469"><a href="#L-469"><span class="linenos">469</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_on_keyup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -684,7 +684,7 @@
 </span><span id="L-472"><a href="#L-472"><span class="linenos">472</span></a><span class="sd">        Called every keyboard keyup. Override this func in your subclass to add code.</span>
 </span><span id="L-473"><a href="#L-473"><span class="linenos">473</span></a>
 </span><span id="L-474"><a href="#L-474"><span class="linenos">474</span></a><span class="sd">        Args:</span>
-</span><span id="L-475"><a href="#L-475"><span class="linenos">475</span></a><span class="sd">            key (str): The keybaord key</span>
+</span><span id="L-475"><a href="#L-475"><span class="linenos">475</span></a><span class="sd">            key (str): The keyboard key.</span>
 </span><span id="L-476"><a href="#L-476"><span class="linenos">476</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="L-477"><a href="#L-477"><span class="linenos">477</span></a>        <span class="k">pass</span>
 </span><span id="L-478"><a href="#L-478"><span class="linenos">478</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_on_keypressed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -693,7 +693,7 @@
 </span><span id="L-481"><a href="#L-481"><span class="linenos">481</span></a><span class="sd">        Called every keypressed. Override this func in your subclass to add code.</span>
 </span><span id="L-482"><a href="#L-482"><span class="linenos">482</span></a>
 </span><span id="L-483"><a href="#L-483"><span class="linenos">483</span></a><span class="sd">        Args:</span>
-</span><span id="L-484"><a href="#L-484"><span class="linenos">484</span></a><span class="sd">            key (str): The keybaord key</span>
+</span><span id="L-484"><a href="#L-484"><span class="linenos">484</span></a><span class="sd">            key (str): The keyboard key.</span>
 </span><span id="L-485"><a href="#L-485"><span class="linenos">485</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="L-486"><a href="#L-486"><span class="linenos">486</span></a>        <span class="k">pass</span>
 </span><span id="L-487"><a href="#L-487"><span class="linenos">487</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_on_mousewheel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">wheel</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -702,7 +702,7 @@
 </span><span id="L-490"><a href="#L-490"><span class="linenos">490</span></a><span class="sd">        Called every mousewheel change. Override this func in your subclass to add code.</span>
 </span><span id="L-491"><a href="#L-491"><span class="linenos">491</span></a>
 </span><span id="L-492"><a href="#L-492"><span class="linenos">492</span></a><span class="sd">        Args:</span>
-</span><span id="L-493"><a href="#L-493"><span class="linenos">493</span></a><span class="sd">            wheel (int): The wheel position, wheel&gt;0 = up, wheel&lt;1 = down</span>
+</span><span id="L-493"><a href="#L-493"><span class="linenos">493</span></a><span class="sd">            wheel (int): The wheel position, wheel&gt;0 = up, wheel&lt;1 = down.</span>
 </span><span id="L-494"><a href="#L-494"><span class="linenos">494</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="L-495"><a href="#L-495"><span class="linenos">495</span></a>        <span class="k">pass</span>
 </span><span id="L-496"><a href="#L-496"><span class="linenos">496</span></a>
@@ -722,15 +722,15 @@
 </span><span id="L-510"><a href="#L-510"><span class="linenos">510</span></a><span class="sd">        Called every paused keyboard keydown. Override this func in your subclass to add code.</span>
 </span><span id="L-511"><a href="#L-511"><span class="linenos">511</span></a>
 </span><span id="L-512"><a href="#L-512"><span class="linenos">512</span></a><span class="sd">        Args:</span>
-</span><span id="L-513"><a href="#L-513"><span class="linenos">513</span></a><span class="sd">            key (str): The keybaord key</span>
+</span><span id="L-513"><a href="#L-513"><span class="linenos">513</span></a><span class="sd">            key (str): The keyboard key.</span>
 </span><span id="L-514"><a href="#L-514"><span class="linenos">514</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="L-515"><a href="#L-515"><span class="linenos">515</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_on_paused_keyup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="L-516"><a href="#L-516"><span class="linenos">516</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="L-517"><a href="#L-517"><span class="linenos">517</span></a><span class="sd">        @public</span>
-</span><span id="L-518"><a href="#L-518"><span class="linenos">518</span></a><span class="sd">        Called every paused keybaord keypressed. Override this func in your subclass to add code.</span>
+</span><span id="L-518"><a href="#L-518"><span class="linenos">518</span></a><span class="sd">        Called every paused keyboard keypressed. Override this func in your subclass to add code.</span>
 </span><span id="L-519"><a href="#L-519"><span class="linenos">519</span></a>
 </span><span id="L-520"><a href="#L-520"><span class="linenos">520</span></a><span class="sd">        Args:</span>
-</span><span id="L-521"><a href="#L-521"><span class="linenos">521</span></a><span class="sd">            key (str): The keybaord key</span>
+</span><span id="L-521"><a href="#L-521"><span class="linenos">521</span></a><span class="sd">            key (str): The keyboard key.</span>
 </span><span id="L-522"><a href="#L-522"><span class="linenos">522</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="L-523"><a href="#L-523"><span class="linenos">523</span></a>        <span class="k">pass</span>
 </span><span id="L-524"><a href="#L-524"><span class="linenos">524</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_on_paused_keypressed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -739,7 +739,7 @@
 </span><span id="L-527"><a href="#L-527"><span class="linenos">527</span></a><span class="sd">        Called every paused keypressed. Override this func in your subclass to add code.</span>
 </span><span id="L-528"><a href="#L-528"><span class="linenos">528</span></a>
 </span><span id="L-529"><a href="#L-529"><span class="linenos">529</span></a><span class="sd">        Args:</span>
-</span><span id="L-530"><a href="#L-530"><span class="linenos">530</span></a><span class="sd">            key (str): The keybaord key</span>
+</span><span id="L-530"><a href="#L-530"><span class="linenos">530</span></a><span class="sd">            key (str): The keyboard key.</span>
 </span><span id="L-531"><a href="#L-531"><span class="linenos">531</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="L-532"><a href="#L-532"><span class="linenos">532</span></a>        <span class="k">pass</span>
 </span><span id="L-533"><a href="#L-533"><span class="linenos">533</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_on_paused_mousewheel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">wheel</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -748,7 +748,7 @@
 </span><span id="L-536"><a href="#L-536"><span class="linenos">536</span></a><span class="sd">        Called every paused mousewheel change. Override this func in your subclass to add code.</span>
 </span><span id="L-537"><a href="#L-537"><span class="linenos">537</span></a>
 </span><span id="L-538"><a href="#L-538"><span class="linenos">538</span></a><span class="sd">        Args:</span>
-</span><span id="L-539"><a href="#L-539"><span class="linenos">539</span></a><span class="sd">            wheel (int): The wheel position, wheel&gt;0 = up, wheel&lt;1 = down</span>
+</span><span id="L-539"><a href="#L-539"><span class="linenos">539</span></a><span class="sd">            wheel (int): The wheel position, wheel&gt;0 = up, wheel&lt;1 = down.</span>
 </span><span id="L-540"><a href="#L-540"><span class="linenos">540</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="L-541"><a href="#L-541"><span class="linenos">541</span></a>        <span class="k">pass</span>
 </span><span id="L-542"><a href="#L-542"><span class="linenos">542</span></a>
@@ -793,7 +793,7 @@
 </span><span id="L-581"><a href="#L-581"><span class="linenos">581</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_on_resume</span><span class="p">()</span>
 </span><span id="L-582"><a href="#L-582"><span class="linenos">582</span></a>
 </span><span id="L-583"><a href="#L-583"><span class="linenos">583</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">exit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-584"><a href="#L-584"><span class="linenos">584</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Exits the game loop&quot;&quot;&quot;</span>
+</span><span id="L-584"><a href="#L-584"><span class="linenos">584</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Exits the game loop.&quot;&quot;&quot;</span>
 </span><span id="L-585"><a href="#L-585"><span class="linenos">585</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__running</span> <span class="o">=</span> <span class="kc">False</span>
 </span><span id="L-586"><a href="#L-586"><span class="linenos">586</span></a>
 </span><span id="L-587"><a href="#L-587"><span class="linenos">587</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">quit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -808,19 +808,19 @@
 </span><span id="L-596"><a href="#L-596"><span class="linenos">596</span></a>        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">runtime</span> <span class="o">*</span> <span class="n">multiplier</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">runtime</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">dt</span><span class="p">)</span> <span class="o">*</span> <span class="n">multiplier</span><span class="p">)</span>
 </span><span id="L-597"><a href="#L-597"><span class="linenos">597</span></a>
 </span><span id="L-598"><a href="#L-598"><span class="linenos">598</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">event_id</span><span class="p">):</span>
-</span><span id="L-599"><a href="#L-599"><span class="linenos">599</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if an event is happening during the frame &quot;&quot;&quot;</span>
+</span><span id="L-599"><a href="#L-599"><span class="linenos">599</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if an event is happening during the frame. &quot;&quot;&quot;</span>
 </span><span id="L-600"><a href="#L-600"><span class="linenos">600</span></a>        <span class="k">return</span> <span class="n">event_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">events</span>
 </span><span id="L-601"><a href="#L-601"><span class="linenos">601</span></a>
 </span><span id="L-602"><a href="#L-602"><span class="linenos">602</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_custom_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">event_name</span><span class="p">):</span>
-</span><span id="L-603"><a href="#L-603"><span class="linenos">603</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if a custom event is happening during the frame &quot;&quot;&quot;</span>
+</span><span id="L-603"><a href="#L-603"><span class="linenos">603</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if a custom event is happening during the frame. &quot;&quot;&quot;</span>
 </span><span id="L-604"><a href="#L-604"><span class="linenos">604</span></a>        <span class="k">return</span> <span class="n">event_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">custom_events</span>    
 </span><span id="L-605"><a href="#L-605"><span class="linenos">605</span></a>
 </span><span id="L-606"><a href="#L-606"><span class="linenos">606</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_paused</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-607"><a href="#L-607"><span class="linenos">607</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns if the scene is paused&quot;&quot;&quot;</span>
+</span><span id="L-607"><a href="#L-607"><span class="linenos">607</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns if the scene is paused.&quot;&quot;&quot;</span>
 </span><span id="L-608"><a href="#L-608"><span class="linenos">608</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__paused</span>
 </span><span id="L-609"><a href="#L-609"><span class="linenos">609</span></a>
 </span><span id="L-610"><a href="#L-610"><span class="linenos">610</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_mouse_pos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-611"><a href="#L-611"><span class="linenos">611</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Get&#39;s the current mouse pos&quot;&quot;&quot;</span>
+</span><span id="L-611"><a href="#L-611"><span class="linenos">611</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets the current mouse pos.&quot;&quot;&quot;</span>
 </span><span id="L-612"><a href="#L-612"><span class="linenos">612</span></a>        <span class="k">return</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mouse</span><span class="o">.</span><span class="n">get_pos</span><span class="p">()</span>
 </span><span id="L-613"><a href="#L-613"><span class="linenos">613</span></a>
 </span><span id="L-614"><a href="#L-614"><span class="linenos">614</span></a>    <span class="c1"># Private Methods</span>
@@ -860,7 +860,7 @@
 </span><span id="L-648"><a href="#L-648"><span class="linenos">648</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__running</span> <span class="o">=</span> <span class="kc">True</span>
 </span><span id="L-649"><a href="#L-649"><span class="linenos">649</span></a>
 </span><span id="L-650"><a href="#L-650"><span class="linenos">650</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">__handle_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
-</span><span id="L-651"><a href="#L-651"><span class="linenos">651</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot; Handles every possible error with a nice message&quot;&quot;&quot;</span>
+</span><span id="L-651"><a href="#L-651"><span class="linenos">651</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot; Handles every possible error with a nice message.&quot;&quot;&quot;</span>
 </span><span id="L-652"><a href="#L-652"><span class="linenos">652</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_on_error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </span><span id="L-653"><a href="#L-653"><span class="linenos">653</span></a>        <span class="n">engine</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="n">debug</span><span class="p">)</span>
 </span><span id="L-654"><a href="#L-654"><span class="linenos">654</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
@@ -933,14 +933,14 @@
 </span><span id="L-721"><a href="#L-721"><span class="linenos">721</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__pause_last_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
 </span><span id="L-722"><a href="#L-722"><span class="linenos">722</span></a>
 </span><span id="L-723"><a href="#L-723"><span class="linenos">723</span></a>    <span class="c1"># no point to update the fps every frame as is hard to tell with the eye</span>
-</span><span id="L-724"><a href="#L-724"><span class="linenos">724</span></a>    <span class="c1"># maybe i should change it to average instead? or let the developer decide, idk</span>
+</span><span id="L-724"><a href="#L-724"><span class="linenos">724</span></a>    <span class="c1"># maybe i should change it to average instead?</span>
 </span><span id="L-725"><a href="#L-725"><span class="linenos">725</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">__update_fps</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
-</span><span id="L-726"><a href="#L-726"><span class="linenos">726</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Updates the current scene fps every 250ms&quot;&quot;&quot;</span>
+</span><span id="L-726"><a href="#L-726"><span class="linenos">726</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Updates the current scene fps every 250ms.&quot;&quot;&quot;</span>
 </span><span id="L-727"><a href="#L-727"><span class="linenos">727</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_time</span><span class="p">(</span><span class="mi">250</span><span class="p">):</span>
 </span><span id="L-728"><a href="#L-728"><span class="linenos">728</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">fps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Display</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">get_fps</span><span class="p">()</span>
 </span><span id="L-729"><a href="#L-729"><span class="linenos">729</span></a>
 </span><span id="L-730"><a href="#L-730"><span class="linenos">730</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">__render</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="L-731"><a href="#L-731"><span class="linenos">731</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Renders the scene&quot;&quot;&quot;</span>
+</span><span id="L-731"><a href="#L-731"><span class="linenos">731</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Renders the scene.&quot;&quot;&quot;</span>
 </span><span id="L-732"><a href="#L-732"><span class="linenos">732</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">__paused</span><span class="p">:</span> <span class="c1"># skip background if paused to keep the last frame render</span>
 </span><span id="L-733"><a href="#L-733"><span class="linenos">733</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">__draw_background</span><span class="p">()</span>
 </span><span id="L-734"><a href="#L-734"><span class="linenos">734</span></a>        <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_paused_draw</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__paused</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_draw</span><span class="p">)()</span>
@@ -1830,7 +1830,7 @@
 </span><span id="Scene-367"><a href="#Scene-367"><span class="linenos">367</span></a>    <span class="n">global_runtime</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="Scene-368"><a href="#Scene-368"><span class="linenos">368</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot; global_pausetime: The global runtime for all the scenes.&quot;&quot;&quot;</span>    
 </span><span id="Scene-369"><a href="#Scene-369"><span class="linenos">369</span></a>    <span class="n">global_pausetime</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="Scene-370"><a href="#Scene-370"><span class="linenos">370</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot; global_runtime: The global pausetime for all the scenes.&quot;&quot;&quot;</span>    
+</span><span id="Scene-370"><a href="#Scene-370"><span class="linenos">370</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot; global_runtime: The global pause time for all the scenes.&quot;&quot;&quot;</span>    
 </span><span id="Scene-371"><a href="#Scene-371"><span class="linenos">371</span></a>    <span class="n">_global_start_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
 </span><span id="Scene-372"><a href="#Scene-372"><span class="linenos">372</span></a>
 </span><span id="Scene-373"><a href="#Scene-373"><span class="linenos">373</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -1882,10 +1882,10 @@
 </span><span id="Scene-419"><a href="#Scene-419"><span class="linenos">419</span></a>
 </span><span id="Scene-420"><a href="#Scene-420"><span class="linenos">420</span></a>    <span class="c1"># Paused Lifecycle Methods</span>
 </span><span id="Scene-421"><a href="#Scene-421"><span class="linenos">421</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_paused_update</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="Scene-422"><a href="#Scene-422"><span class="linenos">422</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called every paused frame to update scene logic. Override this func in your subclass&quot;&quot;&quot;</span>
+</span><span id="Scene-422"><a href="#Scene-422"><span class="linenos">422</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called every paused frame to update scene logic. Override this func in your subclass.&quot;&quot;&quot;</span>
 </span><span id="Scene-423"><a href="#Scene-423"><span class="linenos">423</span></a>        <span class="k">pass</span>
 </span><span id="Scene-424"><a href="#Scene-424"><span class="linenos">424</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_paused_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="Scene-425"><a href="#Scene-425"><span class="linenos">425</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called every paused frame to draw elements to the screen. Override this func in your subclass&quot;&quot;&quot;</span>        
+</span><span id="Scene-425"><a href="#Scene-425"><span class="linenos">425</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called every paused frame to draw elements to the screen. Override this func in your subclass.&quot;&quot;&quot;</span>        
 </span><span id="Scene-426"><a href="#Scene-426"><span class="linenos">426</span></a>        <span class="k">pass</span>
 </span><span id="Scene-427"><a href="#Scene-427"><span class="linenos">427</span></a>
 </span><span id="Scene-428"><a href="#Scene-428"><span class="linenos">428</span></a>    <span class="c1"># Scene State Change Methods</span>
@@ -1896,7 +1896,7 @@
 </span><span id="Scene-433"><a href="#Scene-433"><span class="linenos">433</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called once at the scene quit &quot;Scene.quit()&quot;. Override this func in your subclass to add code.&quot;&quot;&quot;</span>
 </span><span id="Scene-434"><a href="#Scene-434"><span class="linenos">434</span></a>        <span class="k">pass</span>
 </span><span id="Scene-435"><a href="#Scene-435"><span class="linenos">435</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_on_resume</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="Scene-436"><a href="#Scene-436"><span class="linenos">436</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called once at the scene resune &quot;Scene.resume()&quot;. Override this func in your subclass to add code.&quot;&quot;&quot;</span>
+</span><span id="Scene-436"><a href="#Scene-436"><span class="linenos">436</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called once at the scene resume &quot;Scene.resume()&quot;. Override this func in your subclass to add code.&quot;&quot;&quot;</span>
 </span><span id="Scene-437"><a href="#Scene-437"><span class="linenos">437</span></a>        <span class="k">pass</span>
 </span><span id="Scene-438"><a href="#Scene-438"><span class="linenos">438</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_on_pause</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="Scene-439"><a href="#Scene-439"><span class="linenos">439</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called once at the scene pause &quot;Scene.pause()&quot;. Override this func in your subclass to add code.&quot;&quot;&quot;</span>
@@ -1927,7 +1927,7 @@
 </span><span id="Scene-464"><a href="#Scene-464"><span class="linenos">464</span></a><span class="sd">        Called every keyboard keydown. Override this func in your subclass to add code.</span>
 </span><span id="Scene-465"><a href="#Scene-465"><span class="linenos">465</span></a>
 </span><span id="Scene-466"><a href="#Scene-466"><span class="linenos">466</span></a><span class="sd">        Args:</span>
-</span><span id="Scene-467"><a href="#Scene-467"><span class="linenos">467</span></a><span class="sd">            key (str): The keybaord key</span>
+</span><span id="Scene-467"><a href="#Scene-467"><span class="linenos">467</span></a><span class="sd">            key (str): The keyboard key.</span>
 </span><span id="Scene-468"><a href="#Scene-468"><span class="linenos">468</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="Scene-469"><a href="#Scene-469"><span class="linenos">469</span></a>        <span class="k">pass</span>
 </span><span id="Scene-470"><a href="#Scene-470"><span class="linenos">470</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_on_keyup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -1936,7 +1936,7 @@
 </span><span id="Scene-473"><a href="#Scene-473"><span class="linenos">473</span></a><span class="sd">        Called every keyboard keyup. Override this func in your subclass to add code.</span>
 </span><span id="Scene-474"><a href="#Scene-474"><span class="linenos">474</span></a>
 </span><span id="Scene-475"><a href="#Scene-475"><span class="linenos">475</span></a><span class="sd">        Args:</span>
-</span><span id="Scene-476"><a href="#Scene-476"><span class="linenos">476</span></a><span class="sd">            key (str): The keybaord key</span>
+</span><span id="Scene-476"><a href="#Scene-476"><span class="linenos">476</span></a><span class="sd">            key (str): The keyboard key.</span>
 </span><span id="Scene-477"><a href="#Scene-477"><span class="linenos">477</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="Scene-478"><a href="#Scene-478"><span class="linenos">478</span></a>        <span class="k">pass</span>
 </span><span id="Scene-479"><a href="#Scene-479"><span class="linenos">479</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_on_keypressed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -1945,7 +1945,7 @@
 </span><span id="Scene-482"><a href="#Scene-482"><span class="linenos">482</span></a><span class="sd">        Called every keypressed. Override this func in your subclass to add code.</span>
 </span><span id="Scene-483"><a href="#Scene-483"><span class="linenos">483</span></a>
 </span><span id="Scene-484"><a href="#Scene-484"><span class="linenos">484</span></a><span class="sd">        Args:</span>
-</span><span id="Scene-485"><a href="#Scene-485"><span class="linenos">485</span></a><span class="sd">            key (str): The keybaord key</span>
+</span><span id="Scene-485"><a href="#Scene-485"><span class="linenos">485</span></a><span class="sd">            key (str): The keyboard key.</span>
 </span><span id="Scene-486"><a href="#Scene-486"><span class="linenos">486</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="Scene-487"><a href="#Scene-487"><span class="linenos">487</span></a>        <span class="k">pass</span>
 </span><span id="Scene-488"><a href="#Scene-488"><span class="linenos">488</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_on_mousewheel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">wheel</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -1954,7 +1954,7 @@
 </span><span id="Scene-491"><a href="#Scene-491"><span class="linenos">491</span></a><span class="sd">        Called every mousewheel change. Override this func in your subclass to add code.</span>
 </span><span id="Scene-492"><a href="#Scene-492"><span class="linenos">492</span></a>
 </span><span id="Scene-493"><a href="#Scene-493"><span class="linenos">493</span></a><span class="sd">        Args:</span>
-</span><span id="Scene-494"><a href="#Scene-494"><span class="linenos">494</span></a><span class="sd">            wheel (int): The wheel position, wheel&gt;0 = up, wheel&lt;1 = down</span>
+</span><span id="Scene-494"><a href="#Scene-494"><span class="linenos">494</span></a><span class="sd">            wheel (int): The wheel position, wheel&gt;0 = up, wheel&lt;1 = down.</span>
 </span><span id="Scene-495"><a href="#Scene-495"><span class="linenos">495</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="Scene-496"><a href="#Scene-496"><span class="linenos">496</span></a>        <span class="k">pass</span>
 </span><span id="Scene-497"><a href="#Scene-497"><span class="linenos">497</span></a>
@@ -1974,15 +1974,15 @@
 </span><span id="Scene-511"><a href="#Scene-511"><span class="linenos">511</span></a><span class="sd">        Called every paused keyboard keydown. Override this func in your subclass to add code.</span>
 </span><span id="Scene-512"><a href="#Scene-512"><span class="linenos">512</span></a>
 </span><span id="Scene-513"><a href="#Scene-513"><span class="linenos">513</span></a><span class="sd">        Args:</span>
-</span><span id="Scene-514"><a href="#Scene-514"><span class="linenos">514</span></a><span class="sd">            key (str): The keybaord key</span>
+</span><span id="Scene-514"><a href="#Scene-514"><span class="linenos">514</span></a><span class="sd">            key (str): The keyboard key.</span>
 </span><span id="Scene-515"><a href="#Scene-515"><span class="linenos">515</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="Scene-516"><a href="#Scene-516"><span class="linenos">516</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_on_paused_keyup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="Scene-517"><a href="#Scene-517"><span class="linenos">517</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="Scene-518"><a href="#Scene-518"><span class="linenos">518</span></a><span class="sd">        @public</span>
-</span><span id="Scene-519"><a href="#Scene-519"><span class="linenos">519</span></a><span class="sd">        Called every paused keybaord keypressed. Override this func in your subclass to add code.</span>
+</span><span id="Scene-519"><a href="#Scene-519"><span class="linenos">519</span></a><span class="sd">        Called every paused keyboard keypressed. Override this func in your subclass to add code.</span>
 </span><span id="Scene-520"><a href="#Scene-520"><span class="linenos">520</span></a>
 </span><span id="Scene-521"><a href="#Scene-521"><span class="linenos">521</span></a><span class="sd">        Args:</span>
-</span><span id="Scene-522"><a href="#Scene-522"><span class="linenos">522</span></a><span class="sd">            key (str): The keybaord key</span>
+</span><span id="Scene-522"><a href="#Scene-522"><span class="linenos">522</span></a><span class="sd">            key (str): The keyboard key.</span>
 </span><span id="Scene-523"><a href="#Scene-523"><span class="linenos">523</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="Scene-524"><a href="#Scene-524"><span class="linenos">524</span></a>        <span class="k">pass</span>
 </span><span id="Scene-525"><a href="#Scene-525"><span class="linenos">525</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_on_paused_keypressed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -1991,7 +1991,7 @@
 </span><span id="Scene-528"><a href="#Scene-528"><span class="linenos">528</span></a><span class="sd">        Called every paused keypressed. Override this func in your subclass to add code.</span>
 </span><span id="Scene-529"><a href="#Scene-529"><span class="linenos">529</span></a>
 </span><span id="Scene-530"><a href="#Scene-530"><span class="linenos">530</span></a><span class="sd">        Args:</span>
-</span><span id="Scene-531"><a href="#Scene-531"><span class="linenos">531</span></a><span class="sd">            key (str): The keybaord key</span>
+</span><span id="Scene-531"><a href="#Scene-531"><span class="linenos">531</span></a><span class="sd">            key (str): The keyboard key.</span>
 </span><span id="Scene-532"><a href="#Scene-532"><span class="linenos">532</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="Scene-533"><a href="#Scene-533"><span class="linenos">533</span></a>        <span class="k">pass</span>
 </span><span id="Scene-534"><a href="#Scene-534"><span class="linenos">534</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_on_paused_mousewheel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">wheel</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -2000,7 +2000,7 @@
 </span><span id="Scene-537"><a href="#Scene-537"><span class="linenos">537</span></a><span class="sd">        Called every paused mousewheel change. Override this func in your subclass to add code.</span>
 </span><span id="Scene-538"><a href="#Scene-538"><span class="linenos">538</span></a>
 </span><span id="Scene-539"><a href="#Scene-539"><span class="linenos">539</span></a><span class="sd">        Args:</span>
-</span><span id="Scene-540"><a href="#Scene-540"><span class="linenos">540</span></a><span class="sd">            wheel (int): The wheel position, wheel&gt;0 = up, wheel&lt;1 = down</span>
+</span><span id="Scene-540"><a href="#Scene-540"><span class="linenos">540</span></a><span class="sd">            wheel (int): The wheel position, wheel&gt;0 = up, wheel&lt;1 = down.</span>
 </span><span id="Scene-541"><a href="#Scene-541"><span class="linenos">541</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="Scene-542"><a href="#Scene-542"><span class="linenos">542</span></a>        <span class="k">pass</span>
 </span><span id="Scene-543"><a href="#Scene-543"><span class="linenos">543</span></a>
@@ -2045,7 +2045,7 @@
 </span><span id="Scene-582"><a href="#Scene-582"><span class="linenos">582</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_on_resume</span><span class="p">()</span>
 </span><span id="Scene-583"><a href="#Scene-583"><span class="linenos">583</span></a>
 </span><span id="Scene-584"><a href="#Scene-584"><span class="linenos">584</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">exit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Scene-585"><a href="#Scene-585"><span class="linenos">585</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Exits the game loop&quot;&quot;&quot;</span>
+</span><span id="Scene-585"><a href="#Scene-585"><span class="linenos">585</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Exits the game loop.&quot;&quot;&quot;</span>
 </span><span id="Scene-586"><a href="#Scene-586"><span class="linenos">586</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__running</span> <span class="o">=</span> <span class="kc">False</span>
 </span><span id="Scene-587"><a href="#Scene-587"><span class="linenos">587</span></a>
 </span><span id="Scene-588"><a href="#Scene-588"><span class="linenos">588</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">quit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -2060,19 +2060,19 @@
 </span><span id="Scene-597"><a href="#Scene-597"><span class="linenos">597</span></a>        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">runtime</span> <span class="o">*</span> <span class="n">multiplier</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">runtime</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">dt</span><span class="p">)</span> <span class="o">*</span> <span class="n">multiplier</span><span class="p">)</span>
 </span><span id="Scene-598"><a href="#Scene-598"><span class="linenos">598</span></a>
 </span><span id="Scene-599"><a href="#Scene-599"><span class="linenos">599</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">event_id</span><span class="p">):</span>
-</span><span id="Scene-600"><a href="#Scene-600"><span class="linenos">600</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if an event is happening during the frame &quot;&quot;&quot;</span>
+</span><span id="Scene-600"><a href="#Scene-600"><span class="linenos">600</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if an event is happening during the frame. &quot;&quot;&quot;</span>
 </span><span id="Scene-601"><a href="#Scene-601"><span class="linenos">601</span></a>        <span class="k">return</span> <span class="n">event_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">events</span>
 </span><span id="Scene-602"><a href="#Scene-602"><span class="linenos">602</span></a>
 </span><span id="Scene-603"><a href="#Scene-603"><span class="linenos">603</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_custom_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">event_name</span><span class="p">):</span>
-</span><span id="Scene-604"><a href="#Scene-604"><span class="linenos">604</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if a custom event is happening during the frame &quot;&quot;&quot;</span>
+</span><span id="Scene-604"><a href="#Scene-604"><span class="linenos">604</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if a custom event is happening during the frame. &quot;&quot;&quot;</span>
 </span><span id="Scene-605"><a href="#Scene-605"><span class="linenos">605</span></a>        <span class="k">return</span> <span class="n">event_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">custom_events</span>    
 </span><span id="Scene-606"><a href="#Scene-606"><span class="linenos">606</span></a>
 </span><span id="Scene-607"><a href="#Scene-607"><span class="linenos">607</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_paused</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Scene-608"><a href="#Scene-608"><span class="linenos">608</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns if the scene is paused&quot;&quot;&quot;</span>
+</span><span id="Scene-608"><a href="#Scene-608"><span class="linenos">608</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns if the scene is paused.&quot;&quot;&quot;</span>
 </span><span id="Scene-609"><a href="#Scene-609"><span class="linenos">609</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__paused</span>
 </span><span id="Scene-610"><a href="#Scene-610"><span class="linenos">610</span></a>
 </span><span id="Scene-611"><a href="#Scene-611"><span class="linenos">611</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_mouse_pos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Scene-612"><a href="#Scene-612"><span class="linenos">612</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Get&#39;s the current mouse pos&quot;&quot;&quot;</span>
+</span><span id="Scene-612"><a href="#Scene-612"><span class="linenos">612</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets the current mouse pos.&quot;&quot;&quot;</span>
 </span><span id="Scene-613"><a href="#Scene-613"><span class="linenos">613</span></a>        <span class="k">return</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mouse</span><span class="o">.</span><span class="n">get_pos</span><span class="p">()</span>
 </span><span id="Scene-614"><a href="#Scene-614"><span class="linenos">614</span></a>
 </span><span id="Scene-615"><a href="#Scene-615"><span class="linenos">615</span></a>    <span class="c1"># Private Methods</span>
@@ -2112,7 +2112,7 @@
 </span><span id="Scene-649"><a href="#Scene-649"><span class="linenos">649</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__running</span> <span class="o">=</span> <span class="kc">True</span>
 </span><span id="Scene-650"><a href="#Scene-650"><span class="linenos">650</span></a>
 </span><span id="Scene-651"><a href="#Scene-651"><span class="linenos">651</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">__handle_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
-</span><span id="Scene-652"><a href="#Scene-652"><span class="linenos">652</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot; Handles every possible error with a nice message&quot;&quot;&quot;</span>
+</span><span id="Scene-652"><a href="#Scene-652"><span class="linenos">652</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot; Handles every possible error with a nice message.&quot;&quot;&quot;</span>
 </span><span id="Scene-653"><a href="#Scene-653"><span class="linenos">653</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_on_error</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </span><span id="Scene-654"><a href="#Scene-654"><span class="linenos">654</span></a>        <span class="n">engine</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="n">debug</span><span class="p">)</span>
 </span><span id="Scene-655"><a href="#Scene-655"><span class="linenos">655</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
@@ -2185,14 +2185,14 @@
 </span><span id="Scene-722"><a href="#Scene-722"><span class="linenos">722</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__pause_last_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">()</span>
 </span><span id="Scene-723"><a href="#Scene-723"><span class="linenos">723</span></a>
 </span><span id="Scene-724"><a href="#Scene-724"><span class="linenos">724</span></a>    <span class="c1"># no point to update the fps every frame as is hard to tell with the eye</span>
-</span><span id="Scene-725"><a href="#Scene-725"><span class="linenos">725</span></a>    <span class="c1"># maybe i should change it to average instead? or let the developer decide, idk</span>
+</span><span id="Scene-725"><a href="#Scene-725"><span class="linenos">725</span></a>    <span class="c1"># maybe i should change it to average instead?</span>
 </span><span id="Scene-726"><a href="#Scene-726"><span class="linenos">726</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">__update_fps</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> 
-</span><span id="Scene-727"><a href="#Scene-727"><span class="linenos">727</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Updates the current scene fps every 250ms&quot;&quot;&quot;</span>
+</span><span id="Scene-727"><a href="#Scene-727"><span class="linenos">727</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Updates the current scene fps every 250ms.&quot;&quot;&quot;</span>
 </span><span id="Scene-728"><a href="#Scene-728"><span class="linenos">728</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_time</span><span class="p">(</span><span class="mi">250</span><span class="p">):</span>
 </span><span id="Scene-729"><a href="#Scene-729"><span class="linenos">729</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">fps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Display</span><span class="o">.</span><span class="n">clock</span><span class="o">.</span><span class="n">get_fps</span><span class="p">()</span>
 </span><span id="Scene-730"><a href="#Scene-730"><span class="linenos">730</span></a>
 </span><span id="Scene-731"><a href="#Scene-731"><span class="linenos">731</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">__render</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Scene-732"><a href="#Scene-732"><span class="linenos">732</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Renders the scene&quot;&quot;&quot;</span>
+</span><span id="Scene-732"><a href="#Scene-732"><span class="linenos">732</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Renders the scene.&quot;&quot;&quot;</span>
 </span><span id="Scene-733"><a href="#Scene-733"><span class="linenos">733</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">__paused</span><span class="p">:</span> <span class="c1"># skip background if paused to keep the last frame render</span>
 </span><span id="Scene-734"><a href="#Scene-734"><span class="linenos">734</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">__draw_background</span><span class="p">()</span>
 </span><span id="Scene-735"><a href="#Scene-735"><span class="linenos">735</span></a>        <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_paused_draw</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__paused</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_draw</span><span class="p">)()</span>
@@ -2299,7 +2299,7 @@
     </div>
     <a class="headerlink" href="#Scene.global_pausetime"></a>
     
-            <div class="docstring"><p>global_runtime: The global pausetime for all the scenes.</p>
+            <div class="docstring"><p>global_runtime: The global pause time for all the scenes.</p>
 </div>
 
 
@@ -2418,12 +2418,12 @@
     </div>
     <a class="headerlink" href="#Scene._paused_update"></a>
             <div class="pdoc-code codehilite"><pre><span></span><span id="Scene._paused_update-421"><a href="#Scene._paused_update-421"><span class="linenos">421</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_paused_update</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="Scene._paused_update-422"><a href="#Scene._paused_update-422"><span class="linenos">422</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called every paused frame to update scene logic. Override this func in your subclass&quot;&quot;&quot;</span>
+</span><span id="Scene._paused_update-422"><a href="#Scene._paused_update-422"><span class="linenos">422</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called every paused frame to update scene logic. Override this func in your subclass.&quot;&quot;&quot;</span>
 </span><span id="Scene._paused_update-423"><a href="#Scene._paused_update-423"><span class="linenos">423</span></a>        <span class="k">pass</span>
 </span></pre></div>
 
 
-            <div class="docstring"><p>Called every paused frame to update scene logic. Override this func in your subclass</p>
+            <div class="docstring"><p>Called every paused frame to update scene logic. Override this func in your subclass.</p>
 </div>
 
 
@@ -2440,12 +2440,12 @@
     </div>
     <a class="headerlink" href="#Scene._paused_draw"></a>
             <div class="pdoc-code codehilite"><pre><span></span><span id="Scene._paused_draw-424"><a href="#Scene._paused_draw-424"><span class="linenos">424</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_paused_draw</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="Scene._paused_draw-425"><a href="#Scene._paused_draw-425"><span class="linenos">425</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called every paused frame to draw elements to the screen. Override this func in your subclass&quot;&quot;&quot;</span>        
+</span><span id="Scene._paused_draw-425"><a href="#Scene._paused_draw-425"><span class="linenos">425</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called every paused frame to draw elements to the screen. Override this func in your subclass.&quot;&quot;&quot;</span>        
 </span><span id="Scene._paused_draw-426"><a href="#Scene._paused_draw-426"><span class="linenos">426</span></a>        <span class="k">pass</span>
 </span></pre></div>
 
 
-            <div class="docstring"><p>Called every paused frame to draw elements to the screen. Override this func in your subclass</p>
+            <div class="docstring"><p>Called every paused frame to draw elements to the screen. Override this func in your subclass.</p>
 </div>
 
 
@@ -2506,12 +2506,12 @@
     </div>
     <a class="headerlink" href="#Scene._on_resume"></a>
             <div class="pdoc-code codehilite"><pre><span></span><span id="Scene._on_resume-435"><a href="#Scene._on_resume-435"><span class="linenos">435</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_on_resume</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="Scene._on_resume-436"><a href="#Scene._on_resume-436"><span class="linenos">436</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called once at the scene resune &quot;Scene.resume()&quot;. Override this func in your subclass to add code.&quot;&quot;&quot;</span>
+</span><span id="Scene._on_resume-436"><a href="#Scene._on_resume-436"><span class="linenos">436</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;@public Called once at the scene resume &quot;Scene.resume()&quot;. Override this func in your subclass to add code.&quot;&quot;&quot;</span>
 </span><span id="Scene._on_resume-437"><a href="#Scene._on_resume-437"><span class="linenos">437</span></a>        <span class="k">pass</span>
 </span></pre></div>
 
 
-            <div class="docstring"><p>Called once at the scene resune "<a href="#Scene.resume">Scene.resume()</a>". Override this func in your subclass to add code.</p>
+            <div class="docstring"><p>Called once at the scene resume "<a href="#Scene.resume">Scene.resume()</a>". Override this func in your subclass to add code.</p>
 </div>
 
 
@@ -2623,7 +2623,7 @@
 </span><span id="Scene._on_keydown-464"><a href="#Scene._on_keydown-464"><span class="linenos">464</span></a><span class="sd">        Called every keyboard keydown. Override this func in your subclass to add code.</span>
 </span><span id="Scene._on_keydown-465"><a href="#Scene._on_keydown-465"><span class="linenos">465</span></a>
 </span><span id="Scene._on_keydown-466"><a href="#Scene._on_keydown-466"><span class="linenos">466</span></a><span class="sd">        Args:</span>
-</span><span id="Scene._on_keydown-467"><a href="#Scene._on_keydown-467"><span class="linenos">467</span></a><span class="sd">            key (str): The keybaord key</span>
+</span><span id="Scene._on_keydown-467"><a href="#Scene._on_keydown-467"><span class="linenos">467</span></a><span class="sd">            key (str): The keyboard key.</span>
 </span><span id="Scene._on_keydown-468"><a href="#Scene._on_keydown-468"><span class="linenos">468</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="Scene._on_keydown-469"><a href="#Scene._on_keydown-469"><span class="linenos">469</span></a>        <span class="k">pass</span>
 </span></pre></div>
@@ -2634,7 +2634,7 @@
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>key (str):</strong>  The keybaord key</li>
+<li><strong>key (str):</strong>  The keyboard key.</li>
 </ul>
 </div>
 
@@ -2657,7 +2657,7 @@
 </span><span id="Scene._on_keyup-473"><a href="#Scene._on_keyup-473"><span class="linenos">473</span></a><span class="sd">        Called every keyboard keyup. Override this func in your subclass to add code.</span>
 </span><span id="Scene._on_keyup-474"><a href="#Scene._on_keyup-474"><span class="linenos">474</span></a>
 </span><span id="Scene._on_keyup-475"><a href="#Scene._on_keyup-475"><span class="linenos">475</span></a><span class="sd">        Args:</span>
-</span><span id="Scene._on_keyup-476"><a href="#Scene._on_keyup-476"><span class="linenos">476</span></a><span class="sd">            key (str): The keybaord key</span>
+</span><span id="Scene._on_keyup-476"><a href="#Scene._on_keyup-476"><span class="linenos">476</span></a><span class="sd">            key (str): The keyboard key.</span>
 </span><span id="Scene._on_keyup-477"><a href="#Scene._on_keyup-477"><span class="linenos">477</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="Scene._on_keyup-478"><a href="#Scene._on_keyup-478"><span class="linenos">478</span></a>        <span class="k">pass</span>
 </span></pre></div>
@@ -2668,7 +2668,7 @@
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>key (str):</strong>  The keybaord key</li>
+<li><strong>key (str):</strong>  The keyboard key.</li>
 </ul>
 </div>
 
@@ -2691,7 +2691,7 @@
 </span><span id="Scene._on_keypressed-482"><a href="#Scene._on_keypressed-482"><span class="linenos">482</span></a><span class="sd">        Called every keypressed. Override this func in your subclass to add code.</span>
 </span><span id="Scene._on_keypressed-483"><a href="#Scene._on_keypressed-483"><span class="linenos">483</span></a>
 </span><span id="Scene._on_keypressed-484"><a href="#Scene._on_keypressed-484"><span class="linenos">484</span></a><span class="sd">        Args:</span>
-</span><span id="Scene._on_keypressed-485"><a href="#Scene._on_keypressed-485"><span class="linenos">485</span></a><span class="sd">            key (str): The keybaord key</span>
+</span><span id="Scene._on_keypressed-485"><a href="#Scene._on_keypressed-485"><span class="linenos">485</span></a><span class="sd">            key (str): The keyboard key.</span>
 </span><span id="Scene._on_keypressed-486"><a href="#Scene._on_keypressed-486"><span class="linenos">486</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="Scene._on_keypressed-487"><a href="#Scene._on_keypressed-487"><span class="linenos">487</span></a>        <span class="k">pass</span>
 </span></pre></div>
@@ -2702,7 +2702,7 @@
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>key (str):</strong>  The keybaord key</li>
+<li><strong>key (str):</strong>  The keyboard key.</li>
 </ul>
 </div>
 
@@ -2725,7 +2725,7 @@
 </span><span id="Scene._on_mousewheel-491"><a href="#Scene._on_mousewheel-491"><span class="linenos">491</span></a><span class="sd">        Called every mousewheel change. Override this func in your subclass to add code.</span>
 </span><span id="Scene._on_mousewheel-492"><a href="#Scene._on_mousewheel-492"><span class="linenos">492</span></a>
 </span><span id="Scene._on_mousewheel-493"><a href="#Scene._on_mousewheel-493"><span class="linenos">493</span></a><span class="sd">        Args:</span>
-</span><span id="Scene._on_mousewheel-494"><a href="#Scene._on_mousewheel-494"><span class="linenos">494</span></a><span class="sd">            wheel (int): The wheel position, wheel&gt;0 = up, wheel&lt;1 = down</span>
+</span><span id="Scene._on_mousewheel-494"><a href="#Scene._on_mousewheel-494"><span class="linenos">494</span></a><span class="sd">            wheel (int): The wheel position, wheel&gt;0 = up, wheel&lt;1 = down.</span>
 </span><span id="Scene._on_mousewheel-495"><a href="#Scene._on_mousewheel-495"><span class="linenos">495</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="Scene._on_mousewheel-496"><a href="#Scene._on_mousewheel-496"><span class="linenos">496</span></a>        <span class="k">pass</span>
 </span></pre></div>
@@ -2736,7 +2736,7 @@
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>wheel (int):</strong>  The wheel position, wheel>0 = up, wheel&lt;1 = down</li>
+<li><strong>wheel (int):</strong>  The wheel position, wheel>0 = up, wheel&lt;1 = down.</li>
 </ul>
 </div>
 
@@ -2793,7 +2793,7 @@
 </span><span id="Scene._on_paused_keydown-511"><a href="#Scene._on_paused_keydown-511"><span class="linenos">511</span></a><span class="sd">        Called every paused keyboard keydown. Override this func in your subclass to add code.</span>
 </span><span id="Scene._on_paused_keydown-512"><a href="#Scene._on_paused_keydown-512"><span class="linenos">512</span></a>
 </span><span id="Scene._on_paused_keydown-513"><a href="#Scene._on_paused_keydown-513"><span class="linenos">513</span></a><span class="sd">        Args:</span>
-</span><span id="Scene._on_paused_keydown-514"><a href="#Scene._on_paused_keydown-514"><span class="linenos">514</span></a><span class="sd">            key (str): The keybaord key</span>
+</span><span id="Scene._on_paused_keydown-514"><a href="#Scene._on_paused_keydown-514"><span class="linenos">514</span></a><span class="sd">            key (str): The keyboard key.</span>
 </span><span id="Scene._on_paused_keydown-515"><a href="#Scene._on_paused_keydown-515"><span class="linenos">515</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span></pre></div>
 
@@ -2803,7 +2803,7 @@
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>key (str):</strong>  The keybaord key</li>
+<li><strong>key (str):</strong>  The keyboard key.</li>
 </ul>
 </div>
 
@@ -2823,21 +2823,21 @@
             <div class="pdoc-code codehilite"><pre><span></span><span id="Scene._on_paused_keyup-516"><a href="#Scene._on_paused_keyup-516"><span class="linenos">516</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_on_paused_keyup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="Scene._on_paused_keyup-517"><a href="#Scene._on_paused_keyup-517"><span class="linenos">517</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="Scene._on_paused_keyup-518"><a href="#Scene._on_paused_keyup-518"><span class="linenos">518</span></a><span class="sd">        @public</span>
-</span><span id="Scene._on_paused_keyup-519"><a href="#Scene._on_paused_keyup-519"><span class="linenos">519</span></a><span class="sd">        Called every paused keybaord keypressed. Override this func in your subclass to add code.</span>
+</span><span id="Scene._on_paused_keyup-519"><a href="#Scene._on_paused_keyup-519"><span class="linenos">519</span></a><span class="sd">        Called every paused keyboard keypressed. Override this func in your subclass to add code.</span>
 </span><span id="Scene._on_paused_keyup-520"><a href="#Scene._on_paused_keyup-520"><span class="linenos">520</span></a>
 </span><span id="Scene._on_paused_keyup-521"><a href="#Scene._on_paused_keyup-521"><span class="linenos">521</span></a><span class="sd">        Args:</span>
-</span><span id="Scene._on_paused_keyup-522"><a href="#Scene._on_paused_keyup-522"><span class="linenos">522</span></a><span class="sd">            key (str): The keybaord key</span>
+</span><span id="Scene._on_paused_keyup-522"><a href="#Scene._on_paused_keyup-522"><span class="linenos">522</span></a><span class="sd">            key (str): The keyboard key.</span>
 </span><span id="Scene._on_paused_keyup-523"><a href="#Scene._on_paused_keyup-523"><span class="linenos">523</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="Scene._on_paused_keyup-524"><a href="#Scene._on_paused_keyup-524"><span class="linenos">524</span></a>        <span class="k">pass</span>
 </span></pre></div>
 
 
-            <div class="docstring"><p>Called every paused keybaord keypressed. Override this func in your subclass to add code.</p>
+            <div class="docstring"><p>Called every paused keyboard keypressed. Override this func in your subclass to add code.</p>
 
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>key (str):</strong>  The keybaord key</li>
+<li><strong>key (str):</strong>  The keyboard key.</li>
 </ul>
 </div>
 
@@ -2860,7 +2860,7 @@
 </span><span id="Scene._on_paused_keypressed-528"><a href="#Scene._on_paused_keypressed-528"><span class="linenos">528</span></a><span class="sd">        Called every paused keypressed. Override this func in your subclass to add code.</span>
 </span><span id="Scene._on_paused_keypressed-529"><a href="#Scene._on_paused_keypressed-529"><span class="linenos">529</span></a>
 </span><span id="Scene._on_paused_keypressed-530"><a href="#Scene._on_paused_keypressed-530"><span class="linenos">530</span></a><span class="sd">        Args:</span>
-</span><span id="Scene._on_paused_keypressed-531"><a href="#Scene._on_paused_keypressed-531"><span class="linenos">531</span></a><span class="sd">            key (str): The keybaord key</span>
+</span><span id="Scene._on_paused_keypressed-531"><a href="#Scene._on_paused_keypressed-531"><span class="linenos">531</span></a><span class="sd">            key (str): The keyboard key.</span>
 </span><span id="Scene._on_paused_keypressed-532"><a href="#Scene._on_paused_keypressed-532"><span class="linenos">532</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="Scene._on_paused_keypressed-533"><a href="#Scene._on_paused_keypressed-533"><span class="linenos">533</span></a>        <span class="k">pass</span>
 </span></pre></div>
@@ -2871,7 +2871,7 @@
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>key (str):</strong>  The keybaord key</li>
+<li><strong>key (str):</strong>  The keyboard key.</li>
 </ul>
 </div>
 
@@ -2894,7 +2894,7 @@
 </span><span id="Scene._on_paused_mousewheel-537"><a href="#Scene._on_paused_mousewheel-537"><span class="linenos">537</span></a><span class="sd">        Called every paused mousewheel change. Override this func in your subclass to add code.</span>
 </span><span id="Scene._on_paused_mousewheel-538"><a href="#Scene._on_paused_mousewheel-538"><span class="linenos">538</span></a>
 </span><span id="Scene._on_paused_mousewheel-539"><a href="#Scene._on_paused_mousewheel-539"><span class="linenos">539</span></a><span class="sd">        Args:</span>
-</span><span id="Scene._on_paused_mousewheel-540"><a href="#Scene._on_paused_mousewheel-540"><span class="linenos">540</span></a><span class="sd">            wheel (int): The wheel position, wheel&gt;0 = up, wheel&lt;1 = down</span>
+</span><span id="Scene._on_paused_mousewheel-540"><a href="#Scene._on_paused_mousewheel-540"><span class="linenos">540</span></a><span class="sd">            wheel (int): The wheel position, wheel&gt;0 = up, wheel&lt;1 = down.</span>
 </span><span id="Scene._on_paused_mousewheel-541"><a href="#Scene._on_paused_mousewheel-541"><span class="linenos">541</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="Scene._on_paused_mousewheel-542"><a href="#Scene._on_paused_mousewheel-542"><span class="linenos">542</span></a>        <span class="k">pass</span>
 </span></pre></div>
@@ -2905,7 +2905,7 @@
 <h6 id="arguments">Arguments:</h6>
 
 <ul>
-<li><strong>wheel (int):</strong>  The wheel position, wheel>0 = up, wheel&lt;1 = down</li>
+<li><strong>wheel (int):</strong>  The wheel position, wheel>0 = up, wheel&lt;1 = down.</li>
 </ul>
 </div>
 
@@ -3020,12 +3020,12 @@
     </div>
     <a class="headerlink" href="#Scene.exit"></a>
             <div class="pdoc-code codehilite"><pre><span></span><span id="Scene.exit-584"><a href="#Scene.exit-584"><span class="linenos">584</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">exit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Scene.exit-585"><a href="#Scene.exit-585"><span class="linenos">585</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Exits the game loop&quot;&quot;&quot;</span>
+</span><span id="Scene.exit-585"><a href="#Scene.exit-585"><span class="linenos">585</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Exits the game loop.&quot;&quot;&quot;</span>
 </span><span id="Scene.exit-586"><a href="#Scene.exit-586"><span class="linenos">586</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__running</span> <span class="o">=</span> <span class="kc">False</span>
 </span></pre></div>
 
 
-            <div class="docstring"><p>Exits the game loop</p>
+            <div class="docstring"><p>Exits the game loop.</p>
 </div>
 
 
@@ -3088,12 +3088,12 @@
     </div>
     <a class="headerlink" href="#Scene.is_event"></a>
             <div class="pdoc-code codehilite"><pre><span></span><span id="Scene.is_event-599"><a href="#Scene.is_event-599"><span class="linenos">599</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">event_id</span><span class="p">):</span>
-</span><span id="Scene.is_event-600"><a href="#Scene.is_event-600"><span class="linenos">600</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if an event is happening during the frame &quot;&quot;&quot;</span>
+</span><span id="Scene.is_event-600"><a href="#Scene.is_event-600"><span class="linenos">600</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if an event is happening during the frame. &quot;&quot;&quot;</span>
 </span><span id="Scene.is_event-601"><a href="#Scene.is_event-601"><span class="linenos">601</span></a>        <span class="k">return</span> <span class="n">event_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">events</span>
 </span></pre></div>
 
 
-            <div class="docstring"><p>Checks if an event is happening during the frame</p>
+            <div class="docstring"><p>Checks if an event is happening during the frame.</p>
 </div>
 
 
@@ -3110,12 +3110,12 @@
     </div>
     <a class="headerlink" href="#Scene.is_custom_event"></a>
             <div class="pdoc-code codehilite"><pre><span></span><span id="Scene.is_custom_event-603"><a href="#Scene.is_custom_event-603"><span class="linenos">603</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_custom_event</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">event_name</span><span class="p">):</span>
-</span><span id="Scene.is_custom_event-604"><a href="#Scene.is_custom_event-604"><span class="linenos">604</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if a custom event is happening during the frame &quot;&quot;&quot;</span>
+</span><span id="Scene.is_custom_event-604"><a href="#Scene.is_custom_event-604"><span class="linenos">604</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Checks if a custom event is happening during the frame. &quot;&quot;&quot;</span>
 </span><span id="Scene.is_custom_event-605"><a href="#Scene.is_custom_event-605"><span class="linenos">605</span></a>        <span class="k">return</span> <span class="n">event_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">custom_events</span>    
 </span></pre></div>
 
 
-            <div class="docstring"><p>Checks if a custom event is happening during the frame</p>
+            <div class="docstring"><p>Checks if a custom event is happening during the frame.</p>
 </div>
 
 
@@ -3132,12 +3132,12 @@
     </div>
     <a class="headerlink" href="#Scene.is_paused"></a>
             <div class="pdoc-code codehilite"><pre><span></span><span id="Scene.is_paused-607"><a href="#Scene.is_paused-607"><span class="linenos">607</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_paused</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Scene.is_paused-608"><a href="#Scene.is_paused-608"><span class="linenos">608</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns if the scene is paused&quot;&quot;&quot;</span>
+</span><span id="Scene.is_paused-608"><a href="#Scene.is_paused-608"><span class="linenos">608</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns if the scene is paused.&quot;&quot;&quot;</span>
 </span><span id="Scene.is_paused-609"><a href="#Scene.is_paused-609"><span class="linenos">609</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__paused</span>
 </span></pre></div>
 
 
-            <div class="docstring"><p>Returns if the scene is paused</p>
+            <div class="docstring"><p>Returns if the scene is paused.</p>
 </div>
 
 
@@ -3154,12 +3154,12 @@
     </div>
     <a class="headerlink" href="#Scene.get_mouse_pos"></a>
             <div class="pdoc-code codehilite"><pre><span></span><span id="Scene.get_mouse_pos-611"><a href="#Scene.get_mouse_pos-611"><span class="linenos">611</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_mouse_pos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="Scene.get_mouse_pos-612"><a href="#Scene.get_mouse_pos-612"><span class="linenos">612</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Get&#39;s the current mouse pos&quot;&quot;&quot;</span>
+</span><span id="Scene.get_mouse_pos-612"><a href="#Scene.get_mouse_pos-612"><span class="linenos">612</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets the current mouse pos.&quot;&quot;&quot;</span>
 </span><span id="Scene.get_mouse_pos-613"><a href="#Scene.get_mouse_pos-613"><span class="linenos">613</span></a>        <span class="k">return</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mouse</span><span class="o">.</span><span class="n">get_pos</span><span class="p">()</span>
 </span></pre></div>
 
 
-            <div class="docstring"><p>Get's the current mouse pos</p>
+            <div class="docstring"><p>Gets the current mouse pos.</p>
 </div>
 
 
@@ -3232,13 +3232,13 @@
 </span><span id="Scene.Display-57"><a href="#Scene.Display-57"><span class="linenos"> 57</span></a>    <span class="nd">@classmethod</span>
 </span><span id="Scene.Display-58"><a href="#Scene.Display-58"><span class="linenos"> 58</span></a>    <span class="nd">@property</span>
 </span><span id="Scene.Display-59"><a href="#Scene.Display-59"><span class="linenos"> 59</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">clock</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">:</span>
-</span><span id="Scene.Display-60"><a href="#Scene.Display-60"><span class="linenos"> 60</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;pygame.Surface: The main clock.&quot;&quot;&quot;</span>
+</span><span id="Scene.Display-60"><a href="#Scene.Display-60"><span class="linenos"> 60</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;pygame.time.Clock: The main clock.&quot;&quot;&quot;</span>
 </span><span id="Scene.Display-61"><a href="#Scene.Display-61"><span class="linenos"> 61</span></a>        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_clock</span>
 </span><span id="Scene.Display-62"><a href="#Scene.Display-62"><span class="linenos"> 62</span></a>
 </span><span id="Scene.Display-63"><a href="#Scene.Display-63"><span class="linenos"> 63</span></a>    <span class="nd">@classmethod</span>
 </span><span id="Scene.Display-64"><a href="#Scene.Display-64"><span class="linenos"> 64</span></a>    <span class="nd">@property</span>
 </span><span id="Scene.Display-65"><a href="#Scene.Display-65"><span class="linenos"> 65</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">center</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
-</span><span id="Scene.Display-66"><a href="#Scene.Display-66"><span class="linenos"> 66</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;tuple[float, float]: The center point of the display surface.&quot;&quot;&quot;</span>
+</span><span id="Scene.Display-66"><a href="#Scene.Display-66"><span class="linenos"> 66</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;center: tuple[float, float]&quot;&quot;&quot;</span>
 </span><span id="Scene.Display-67"><a href="#Scene.Display-67"><span class="linenos"> 67</span></a>        <span class="k">return</span> <span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">_res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_res</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
 </span><span id="Scene.Display-68"><a href="#Scene.Display-68"><span class="linenos"> 68</span></a>
 </span><span id="Scene.Display-69"><a href="#Scene.Display-69"><span class="linenos"> 69</span></a>    <span class="nd">@classmethod</span>
