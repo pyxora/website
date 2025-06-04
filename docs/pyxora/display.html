@@ -83,6 +83,12 @@
                         <li>
                                 <a class="function" href="#Display.draw_shape">draw_shape</a>
                         </li>
+                        <li>
+                                <a class="function" href="#Display.draw_text">draw_text</a>
+                        </li>
+                        <li>
+                                <a class="function" href="#Display.draw_image">draw_image</a>
+                        </li>
                 </ul>
 
             </li>
@@ -278,51 +284,48 @@
 </span><span id="L-169"><a href="#L-169"><span class="linenos">169</span></a>        <span class="c1"># Just calls the abstracted shape.draw method, so we only need one method to draw any future shape :)</span>
 </span><span id="L-170"><a href="#L-170"><span class="linenos">170</span></a>        <span class="n">Shape</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">surf</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">fill</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </span><span id="L-171"><a href="#L-171"><span class="linenos">171</span></a>
-</span><span id="L-172"><a href="#L-172"><span class="linenos">172</span></a>    <span class="c1"># not ready</span>
-</span><span id="L-173"><a href="#L-173"><span class="linenos">173</span></a><span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
-</span><span id="L-174"><a href="#L-174"><span class="linenos">174</span></a><span class="sd">    @classmethod</span>
-</span><span id="L-175"><a href="#L-175"><span class="linenos">175</span></a><span class="sd">    def draw_text(cls, Txt) -&gt; None:</span>
-</span><span id="L-176"><a href="#L-176"><span class="linenos">176</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-177"><a href="#L-177"><span class="linenos">177</span></a><span class="sd">        Draw text on the screen.</span>
-</span><span id="L-178"><a href="#L-178"><span class="linenos">178</span></a>
-</span><span id="L-179"><a href="#L-179"><span class="linenos">179</span></a><span class="sd">        Args:</span>
-</span><span id="L-180"><a href="#L-180"><span class="linenos">180</span></a><span class="sd">            Txt: A text object with a `.draw()` method.</span>
-</span><span id="L-181"><a href="#L-181"><span class="linenos">181</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-182"><a href="#L-182"><span class="linenos">182</span></a><span class="sd">        Txt.draw(cls.surf, scale=1)</span>
-</span><span id="L-183"><a href="#L-183"><span class="linenos">183</span></a>
-</span><span id="L-184"><a href="#L-184"><span class="linenos">184</span></a><span class="sd">    @classmethod</span>
-</span><span id="L-185"><a href="#L-185"><span class="linenos">185</span></a><span class="sd">    def draw_image(cls, Image) -&gt; None:</span>
-</span><span id="L-186"><a href="#L-186"><span class="linenos">186</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-187"><a href="#L-187"><span class="linenos">187</span></a><span class="sd">        Draw an image on the screen.</span>
-</span><span id="L-188"><a href="#L-188"><span class="linenos">188</span></a>
-</span><span id="L-189"><a href="#L-189"><span class="linenos">189</span></a><span class="sd">        Args:</span>
-</span><span id="L-190"><a href="#L-190"><span class="linenos">190</span></a><span class="sd">            Image: An image object with a `.draw()` method.</span>
-</span><span id="L-191"><a href="#L-191"><span class="linenos">191</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="L-192"><a href="#L-192"><span class="linenos">192</span></a><span class="sd">        Image.draw(cls.surf, scale=1)</span>
-</span><span id="L-193"><a href="#L-193"><span class="linenos">193</span></a>
-</span><span id="L-194"><a href="#L-194"><span class="linenos">194</span></a><span class="sd">    &#39;&#39;&#39;</span>
-</span><span id="L-195"><a href="#L-195"><span class="linenos">195</span></a>
-</span><span id="L-196"><a href="#L-196"><span class="linenos">196</span></a>    <span class="c1"># Note: I planned to use the new pygame.Window for more features,</span>
-</span><span id="L-197"><a href="#L-197"><span class="linenos">197</span></a>    <span class="c1"># but it caused issues with pybgag (web builds), so set_mode for now.</span>
-</span><span id="L-198"><a href="#L-198"><span class="linenos">198</span></a>    <span class="nd">@classmethod</span>
-</span><span id="L-199"><a href="#L-199"><span class="linenos">199</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">__set_mode</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="L-200"><a href="#L-200"><span class="linenos">200</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Private method to set the display mode based on flags and resolution.&quot;&quot;&quot;</span>
-</span><span id="L-201"><a href="#L-201"><span class="linenos">201</span></a>        <span class="n">window_res</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">get_size</span><span class="p">()</span>
-</span><span id="L-202"><a href="#L-202"><span class="linenos">202</span></a>        <span class="n">vsync</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">_vsync</span><span class="p">)</span>
-</span><span id="L-203"><a href="#L-203"><span class="linenos">203</span></a>        <span class="n">display</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_index</span>
+</span><span id="L-172"><a href="#L-172"><span class="linenos">172</span></a>    <span class="nd">@classmethod</span>
+</span><span id="L-173"><a href="#L-173"><span class="linenos">173</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">draw_text</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">Txt</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="L-174"><a href="#L-174"><span class="linenos">174</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-175"><a href="#L-175"><span class="linenos">175</span></a><span class="sd">        Draw text on the screen.</span>
+</span><span id="L-176"><a href="#L-176"><span class="linenos">176</span></a>
+</span><span id="L-177"><a href="#L-177"><span class="linenos">177</span></a><span class="sd">        Args:</span>
+</span><span id="L-178"><a href="#L-178"><span class="linenos">178</span></a><span class="sd">            Txt: A text object with a `.draw()` method.</span>
+</span><span id="L-179"><a href="#L-179"><span class="linenos">179</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-180"><a href="#L-180"><span class="linenos">180</span></a>        <span class="n">Txt</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">surf</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="L-181"><a href="#L-181"><span class="linenos">181</span></a>
+</span><span id="L-182"><a href="#L-182"><span class="linenos">182</span></a>
+</span><span id="L-183"><a href="#L-183"><span class="linenos">183</span></a>    <span class="nd">@classmethod</span>
+</span><span id="L-184"><a href="#L-184"><span class="linenos">184</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">draw_image</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">Image</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="L-185"><a href="#L-185"><span class="linenos">185</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-186"><a href="#L-186"><span class="linenos">186</span></a><span class="sd">        Draw an image on the screen.</span>
+</span><span id="L-187"><a href="#L-187"><span class="linenos">187</span></a>
+</span><span id="L-188"><a href="#L-188"><span class="linenos">188</span></a><span class="sd">        Args:</span>
+</span><span id="L-189"><a href="#L-189"><span class="linenos">189</span></a><span class="sd">            Image: An image object with a `.draw()` method.</span>
+</span><span id="L-190"><a href="#L-190"><span class="linenos">190</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="L-191"><a href="#L-191"><span class="linenos">191</span></a>        <span class="n">Image</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">surf</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="L-192"><a href="#L-192"><span class="linenos">192</span></a>
+</span><span id="L-193"><a href="#L-193"><span class="linenos">193</span></a>    <span class="c1"># Note: I planned to use the new pygame.Window for more features,</span>
+</span><span id="L-194"><a href="#L-194"><span class="linenos">194</span></a>    <span class="c1"># but it caused issues with pybgag (web builds), so set_mode for now.</span>
+</span><span id="L-195"><a href="#L-195"><span class="linenos">195</span></a>    <span class="nd">@classmethod</span>
+</span><span id="L-196"><a href="#L-196"><span class="linenos">196</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">__set_mode</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="L-197"><a href="#L-197"><span class="linenos">197</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Private method to set the display mode based on flags and resolution.&quot;&quot;&quot;</span>
+</span><span id="L-198"><a href="#L-198"><span class="linenos">198</span></a>        <span class="n">window_res</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">get_size</span><span class="p">()</span>
+</span><span id="L-199"><a href="#L-199"><span class="linenos">199</span></a>        <span class="n">vsync</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">_vsync</span><span class="p">)</span>
+</span><span id="L-200"><a href="#L-200"><span class="linenos">200</span></a>        <span class="n">display</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_index</span>
+</span><span id="L-201"><a href="#L-201"><span class="linenos">201</span></a>
+</span><span id="L-202"><a href="#L-202"><span class="linenos">202</span></a>        <span class="c1"># apply the flags</span>
+</span><span id="L-203"><a href="#L-203"><span class="linenos">203</span></a>        <span class="n">flags</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="L-204"><a href="#L-204"><span class="linenos">204</span></a>
-</span><span id="L-205"><a href="#L-205"><span class="linenos">205</span></a>        <span class="c1"># apply the flags</span>
-</span><span id="L-206"><a href="#L-206"><span class="linenos">206</span></a>        <span class="n">flags</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="L-207"><a href="#L-207"><span class="linenos">207</span></a>
-</span><span id="L-208"><a href="#L-208"><span class="linenos">208</span></a>        <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_fullscreen</span><span class="p">:</span>
-</span><span id="L-209"><a href="#L-209"><span class="linenos">209</span></a>            <span class="n">flags</span> <span class="o">|=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">FULLSCREEN</span>
-</span><span id="L-210"><a href="#L-210"><span class="linenos">210</span></a>            <span class="n">flags</span> <span class="o">|=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">HWSURFACE</span>
-</span><span id="L-211"><a href="#L-211"><span class="linenos">211</span></a>            <span class="n">flags</span> <span class="o">|=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">SCALED</span>
+</span><span id="L-205"><a href="#L-205"><span class="linenos">205</span></a>        <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_fullscreen</span><span class="p">:</span>
+</span><span id="L-206"><a href="#L-206"><span class="linenos">206</span></a>            <span class="n">flags</span> <span class="o">|=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">FULLSCREEN</span>
+</span><span id="L-207"><a href="#L-207"><span class="linenos">207</span></a>            <span class="n">flags</span> <span class="o">|=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">HWSURFACE</span>
+</span><span id="L-208"><a href="#L-208"><span class="linenos">208</span></a>            <span class="n">flags</span> <span class="o">|=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">SCALED</span>
+</span><span id="L-209"><a href="#L-209"><span class="linenos">209</span></a>
+</span><span id="L-210"><a href="#L-210"><span class="linenos">210</span></a>        <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_resizable</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_fullscreen</span><span class="p">:</span>
+</span><span id="L-211"><a href="#L-211"><span class="linenos">211</span></a>            <span class="n">flags</span> <span class="o">|=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">RESIZABLE</span>
 </span><span id="L-212"><a href="#L-212"><span class="linenos">212</span></a>
-</span><span id="L-213"><a href="#L-213"><span class="linenos">213</span></a>        <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_resizable</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_fullscreen</span><span class="p">:</span>
-</span><span id="L-214"><a href="#L-214"><span class="linenos">214</span></a>            <span class="n">flags</span> <span class="o">|=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">RESIZABLE</span>
-</span><span id="L-215"><a href="#L-215"><span class="linenos">215</span></a>
-</span><span id="L-216"><a href="#L-216"><span class="linenos">216</span></a>        <span class="bp">cls</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span><span class="n">window_res</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">flags</span><span class="p">,</span> <span class="n">vsync</span><span class="o">=</span><span class="n">vsync</span><span class="p">,</span><span class="n">display</span><span class="o">=</span><span class="n">display</span><span class="p">)</span>
+</span><span id="L-213"><a href="#L-213"><span class="linenos">213</span></a>        <span class="bp">cls</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span><span class="n">window_res</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">flags</span><span class="p">,</span> <span class="n">vsync</span><span class="o">=</span><span class="n">vsync</span><span class="p">,</span><span class="n">display</span><span class="o">=</span><span class="n">display</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -502,51 +505,48 @@
 </span><span id="Display-170"><a href="#Display-170"><span class="linenos">170</span></a>        <span class="c1"># Just calls the abstracted shape.draw method, so we only need one method to draw any future shape :)</span>
 </span><span id="Display-171"><a href="#Display-171"><span class="linenos">171</span></a>        <span class="n">Shape</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">surf</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">fill</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </span><span id="Display-172"><a href="#Display-172"><span class="linenos">172</span></a>
-</span><span id="Display-173"><a href="#Display-173"><span class="linenos">173</span></a>    <span class="c1"># not ready</span>
-</span><span id="Display-174"><a href="#Display-174"><span class="linenos">174</span></a><span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
-</span><span id="Display-175"><a href="#Display-175"><span class="linenos">175</span></a><span class="sd">    @classmethod</span>
-</span><span id="Display-176"><a href="#Display-176"><span class="linenos">176</span></a><span class="sd">    def draw_text(cls, Txt) -&gt; None:</span>
-</span><span id="Display-177"><a href="#Display-177"><span class="linenos">177</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Display-178"><a href="#Display-178"><span class="linenos">178</span></a><span class="sd">        Draw text on the screen.</span>
-</span><span id="Display-179"><a href="#Display-179"><span class="linenos">179</span></a>
-</span><span id="Display-180"><a href="#Display-180"><span class="linenos">180</span></a><span class="sd">        Args:</span>
-</span><span id="Display-181"><a href="#Display-181"><span class="linenos">181</span></a><span class="sd">            Txt: A text object with a `.draw()` method.</span>
-</span><span id="Display-182"><a href="#Display-182"><span class="linenos">182</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Display-183"><a href="#Display-183"><span class="linenos">183</span></a><span class="sd">        Txt.draw(cls.surf, scale=1)</span>
-</span><span id="Display-184"><a href="#Display-184"><span class="linenos">184</span></a>
-</span><span id="Display-185"><a href="#Display-185"><span class="linenos">185</span></a><span class="sd">    @classmethod</span>
-</span><span id="Display-186"><a href="#Display-186"><span class="linenos">186</span></a><span class="sd">    def draw_image(cls, Image) -&gt; None:</span>
-</span><span id="Display-187"><a href="#Display-187"><span class="linenos">187</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Display-188"><a href="#Display-188"><span class="linenos">188</span></a><span class="sd">        Draw an image on the screen.</span>
-</span><span id="Display-189"><a href="#Display-189"><span class="linenos">189</span></a>
-</span><span id="Display-190"><a href="#Display-190"><span class="linenos">190</span></a><span class="sd">        Args:</span>
-</span><span id="Display-191"><a href="#Display-191"><span class="linenos">191</span></a><span class="sd">            Image: An image object with a `.draw()` method.</span>
-</span><span id="Display-192"><a href="#Display-192"><span class="linenos">192</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Display-193"><a href="#Display-193"><span class="linenos">193</span></a><span class="sd">        Image.draw(cls.surf, scale=1)</span>
-</span><span id="Display-194"><a href="#Display-194"><span class="linenos">194</span></a>
-</span><span id="Display-195"><a href="#Display-195"><span class="linenos">195</span></a><span class="sd">    &#39;&#39;&#39;</span>
-</span><span id="Display-196"><a href="#Display-196"><span class="linenos">196</span></a>
-</span><span id="Display-197"><a href="#Display-197"><span class="linenos">197</span></a>    <span class="c1"># Note: I planned to use the new pygame.Window for more features,</span>
-</span><span id="Display-198"><a href="#Display-198"><span class="linenos">198</span></a>    <span class="c1"># but it caused issues with pybgag (web builds), so set_mode for now.</span>
-</span><span id="Display-199"><a href="#Display-199"><span class="linenos">199</span></a>    <span class="nd">@classmethod</span>
-</span><span id="Display-200"><a href="#Display-200"><span class="linenos">200</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">__set_mode</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="Display-201"><a href="#Display-201"><span class="linenos">201</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Private method to set the display mode based on flags and resolution.&quot;&quot;&quot;</span>
-</span><span id="Display-202"><a href="#Display-202"><span class="linenos">202</span></a>        <span class="n">window_res</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">get_size</span><span class="p">()</span>
-</span><span id="Display-203"><a href="#Display-203"><span class="linenos">203</span></a>        <span class="n">vsync</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">_vsync</span><span class="p">)</span>
-</span><span id="Display-204"><a href="#Display-204"><span class="linenos">204</span></a>        <span class="n">display</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_index</span>
+</span><span id="Display-173"><a href="#Display-173"><span class="linenos">173</span></a>    <span class="nd">@classmethod</span>
+</span><span id="Display-174"><a href="#Display-174"><span class="linenos">174</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">draw_text</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">Txt</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="Display-175"><a href="#Display-175"><span class="linenos">175</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Display-176"><a href="#Display-176"><span class="linenos">176</span></a><span class="sd">        Draw text on the screen.</span>
+</span><span id="Display-177"><a href="#Display-177"><span class="linenos">177</span></a>
+</span><span id="Display-178"><a href="#Display-178"><span class="linenos">178</span></a><span class="sd">        Args:</span>
+</span><span id="Display-179"><a href="#Display-179"><span class="linenos">179</span></a><span class="sd">            Txt: A text object with a `.draw()` method.</span>
+</span><span id="Display-180"><a href="#Display-180"><span class="linenos">180</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Display-181"><a href="#Display-181"><span class="linenos">181</span></a>        <span class="n">Txt</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">surf</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="Display-182"><a href="#Display-182"><span class="linenos">182</span></a>
+</span><span id="Display-183"><a href="#Display-183"><span class="linenos">183</span></a>
+</span><span id="Display-184"><a href="#Display-184"><span class="linenos">184</span></a>    <span class="nd">@classmethod</span>
+</span><span id="Display-185"><a href="#Display-185"><span class="linenos">185</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">draw_image</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">Image</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="Display-186"><a href="#Display-186"><span class="linenos">186</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Display-187"><a href="#Display-187"><span class="linenos">187</span></a><span class="sd">        Draw an image on the screen.</span>
+</span><span id="Display-188"><a href="#Display-188"><span class="linenos">188</span></a>
+</span><span id="Display-189"><a href="#Display-189"><span class="linenos">189</span></a><span class="sd">        Args:</span>
+</span><span id="Display-190"><a href="#Display-190"><span class="linenos">190</span></a><span class="sd">            Image: An image object with a `.draw()` method.</span>
+</span><span id="Display-191"><a href="#Display-191"><span class="linenos">191</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Display-192"><a href="#Display-192"><span class="linenos">192</span></a>        <span class="n">Image</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">surf</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="Display-193"><a href="#Display-193"><span class="linenos">193</span></a>
+</span><span id="Display-194"><a href="#Display-194"><span class="linenos">194</span></a>    <span class="c1"># Note: I planned to use the new pygame.Window for more features,</span>
+</span><span id="Display-195"><a href="#Display-195"><span class="linenos">195</span></a>    <span class="c1"># but it caused issues with pybgag (web builds), so set_mode for now.</span>
+</span><span id="Display-196"><a href="#Display-196"><span class="linenos">196</span></a>    <span class="nd">@classmethod</span>
+</span><span id="Display-197"><a href="#Display-197"><span class="linenos">197</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">__set_mode</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="Display-198"><a href="#Display-198"><span class="linenos">198</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Private method to set the display mode based on flags and resolution.&quot;&quot;&quot;</span>
+</span><span id="Display-199"><a href="#Display-199"><span class="linenos">199</span></a>        <span class="n">window_res</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">get_size</span><span class="p">()</span>
+</span><span id="Display-200"><a href="#Display-200"><span class="linenos">200</span></a>        <span class="n">vsync</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">_vsync</span><span class="p">)</span>
+</span><span id="Display-201"><a href="#Display-201"><span class="linenos">201</span></a>        <span class="n">display</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_index</span>
+</span><span id="Display-202"><a href="#Display-202"><span class="linenos">202</span></a>
+</span><span id="Display-203"><a href="#Display-203"><span class="linenos">203</span></a>        <span class="c1"># apply the flags</span>
+</span><span id="Display-204"><a href="#Display-204"><span class="linenos">204</span></a>        <span class="n">flags</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="Display-205"><a href="#Display-205"><span class="linenos">205</span></a>
-</span><span id="Display-206"><a href="#Display-206"><span class="linenos">206</span></a>        <span class="c1"># apply the flags</span>
-</span><span id="Display-207"><a href="#Display-207"><span class="linenos">207</span></a>        <span class="n">flags</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="Display-208"><a href="#Display-208"><span class="linenos">208</span></a>
-</span><span id="Display-209"><a href="#Display-209"><span class="linenos">209</span></a>        <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_fullscreen</span><span class="p">:</span>
-</span><span id="Display-210"><a href="#Display-210"><span class="linenos">210</span></a>            <span class="n">flags</span> <span class="o">|=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">FULLSCREEN</span>
-</span><span id="Display-211"><a href="#Display-211"><span class="linenos">211</span></a>            <span class="n">flags</span> <span class="o">|=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">HWSURFACE</span>
-</span><span id="Display-212"><a href="#Display-212"><span class="linenos">212</span></a>            <span class="n">flags</span> <span class="o">|=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">SCALED</span>
+</span><span id="Display-206"><a href="#Display-206"><span class="linenos">206</span></a>        <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_fullscreen</span><span class="p">:</span>
+</span><span id="Display-207"><a href="#Display-207"><span class="linenos">207</span></a>            <span class="n">flags</span> <span class="o">|=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">FULLSCREEN</span>
+</span><span id="Display-208"><a href="#Display-208"><span class="linenos">208</span></a>            <span class="n">flags</span> <span class="o">|=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">HWSURFACE</span>
+</span><span id="Display-209"><a href="#Display-209"><span class="linenos">209</span></a>            <span class="n">flags</span> <span class="o">|=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">SCALED</span>
+</span><span id="Display-210"><a href="#Display-210"><span class="linenos">210</span></a>
+</span><span id="Display-211"><a href="#Display-211"><span class="linenos">211</span></a>        <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_resizable</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_fullscreen</span><span class="p">:</span>
+</span><span id="Display-212"><a href="#Display-212"><span class="linenos">212</span></a>            <span class="n">flags</span> <span class="o">|=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">RESIZABLE</span>
 </span><span id="Display-213"><a href="#Display-213"><span class="linenos">213</span></a>
-</span><span id="Display-214"><a href="#Display-214"><span class="linenos">214</span></a>        <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_resizable</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_fullscreen</span><span class="p">:</span>
-</span><span id="Display-215"><a href="#Display-215"><span class="linenos">215</span></a>            <span class="n">flags</span> <span class="o">|=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">RESIZABLE</span>
-</span><span id="Display-216"><a href="#Display-216"><span class="linenos">216</span></a>
-</span><span id="Display-217"><a href="#Display-217"><span class="linenos">217</span></a>        <span class="bp">cls</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span><span class="n">window_res</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">flags</span><span class="p">,</span> <span class="n">vsync</span><span class="o">=</span><span class="n">vsync</span><span class="p">,</span><span class="n">display</span><span class="o">=</span><span class="n">display</span><span class="p">)</span>
+</span><span id="Display-214"><a href="#Display-214"><span class="linenos">214</span></a>        <span class="bp">cls</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span><span class="n">window_res</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">flags</span><span class="p">,</span> <span class="n">vsync</span><span class="o">=</span><span class="n">vsync</span><span class="p">,</span><span class="n">display</span><span class="o">=</span><span class="n">display</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -1062,6 +1062,76 @@ Otherwise, it returns the base resolution.</p>
 <ul>
 <li><strong>Shape:</strong>  The shape object with a <code>.draw()</code> method.</li>
 <li><strong>fill (int, optional):</strong>  Fill mode or color. Defaults to 0.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div id="Display.draw_text" class="classattr">
+                                        <input id="Display.draw_text-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+                    <div class="decorator decorator-classmethod">@classmethod</div>
+
+        <span class="def">def</span>
+        <span class="name">draw_text</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">cls</span>, </span><span class="param"><span class="n">Txt</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+                <label class="view-source-button" for="Display.draw_text-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Display.draw_text"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Display.draw_text-173"><a href="#Display.draw_text-173"><span class="linenos">173</span></a>    <span class="nd">@classmethod</span>
+</span><span id="Display.draw_text-174"><a href="#Display.draw_text-174"><span class="linenos">174</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">draw_text</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">Txt</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="Display.draw_text-175"><a href="#Display.draw_text-175"><span class="linenos">175</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Display.draw_text-176"><a href="#Display.draw_text-176"><span class="linenos">176</span></a><span class="sd">        Draw text on the screen.</span>
+</span><span id="Display.draw_text-177"><a href="#Display.draw_text-177"><span class="linenos">177</span></a>
+</span><span id="Display.draw_text-178"><a href="#Display.draw_text-178"><span class="linenos">178</span></a><span class="sd">        Args:</span>
+</span><span id="Display.draw_text-179"><a href="#Display.draw_text-179"><span class="linenos">179</span></a><span class="sd">            Txt: A text object with a `.draw()` method.</span>
+</span><span id="Display.draw_text-180"><a href="#Display.draw_text-180"><span class="linenos">180</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Display.draw_text-181"><a href="#Display.draw_text-181"><span class="linenos">181</span></a>        <span class="n">Txt</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">surf</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Draw text on the screen.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>Txt:</strong>  A text object with a <code>.draw()</code> method.</li>
+</ul>
+</div>
+
+
+                            </div>
+                            <div id="Display.draw_image" class="classattr">
+                                        <input id="Display.draw_image-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
+<div class="attr function">
+                    <div class="decorator decorator-classmethod">@classmethod</div>
+
+        <span class="def">def</span>
+        <span class="name">draw_image</span><span class="signature pdoc-code condensed">(<span class="param"><span class="bp">cls</span>, </span><span class="param"><span class="n">Image</span></span><span class="return-annotation">) -> <span class="kc">None</span>:</span></span>
+
+                <label class="view-source-button" for="Display.draw_image-view-source"><span>View Source</span></label>
+
+    </div>
+    <a class="headerlink" href="#Display.draw_image"></a>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Display.draw_image-184"><a href="#Display.draw_image-184"><span class="linenos">184</span></a>    <span class="nd">@classmethod</span>
+</span><span id="Display.draw_image-185"><a href="#Display.draw_image-185"><span class="linenos">185</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">draw_image</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">Image</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="Display.draw_image-186"><a href="#Display.draw_image-186"><span class="linenos">186</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="Display.draw_image-187"><a href="#Display.draw_image-187"><span class="linenos">187</span></a><span class="sd">        Draw an image on the screen.</span>
+</span><span id="Display.draw_image-188"><a href="#Display.draw_image-188"><span class="linenos">188</span></a>
+</span><span id="Display.draw_image-189"><a href="#Display.draw_image-189"><span class="linenos">189</span></a><span class="sd">        Args:</span>
+</span><span id="Display.draw_image-190"><a href="#Display.draw_image-190"><span class="linenos">190</span></a><span class="sd">            Image: An image object with a `.draw()` method.</span>
+</span><span id="Display.draw_image-191"><a href="#Display.draw_image-191"><span class="linenos">191</span></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="Display.draw_image-192"><a href="#Display.draw_image-192"><span class="linenos">192</span></a>        <span class="n">Image</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">surf</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></pre></div>
+
+
+            <div class="docstring"><p>Draw an image on the screen.</p>
+
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>Image:</strong>  An image object with a <code>.draw()</code> method.</li>
 </ul>
 </div>
 
