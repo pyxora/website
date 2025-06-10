@@ -113,7 +113,7 @@
 
                         <label class="view-source-button" for="mod-text-view-source"><span>View Source</span></label>
 
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">  1</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.others</span><span class="w"> </span><span class="kn">import</span> <span class="n">vector</span>
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">  1</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.functions</span><span class="w"> </span><span class="kn">import</span> <span class="n">vector</span>
 </span><span id="L-2"><a href="#L-2"><span class="linenos">  2</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">..assets</span><span class="w"> </span><span class="kn">import</span> <span class="n">Assets</span>
 </span><span id="L-3"><a href="#L-3"><span class="linenos">  3</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">..utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">engine</span>
 </span><span id="L-4"><a href="#L-4"><span class="linenos">  4</span></a>
@@ -149,7 +149,7 @@
 </span><span id="L-34"><a href="#L-34"><span class="linenos"> 34</span></a><span class="sd">        Initialize a Text object.</span>
 </span><span id="L-35"><a href="#L-35"><span class="linenos"> 35</span></a>
 </span><span id="L-36"><a href="#L-36"><span class="linenos"> 36</span></a><span class="sd">        Args:</span>
-</span><span id="L-37"><a href="#L-37"><span class="linenos"> 37</span></a><span class="sd">        pos (pos: Tuple[int | float, int | float] | pygame.math.Vector2 | pygame.math.Vector3): The position of the text.</span>
+</span><span id="L-37"><a href="#L-37"><span class="linenos"> 37</span></a><span class="sd">            pos (pos: Tuple[int | float, int | float] | pygame.math.Vector2 | pygame.math.Vector3): The position of the text.</span>
 </span><span id="L-38"><a href="#L-38"><span class="linenos"> 38</span></a><span class="sd">            text (str): The string to render.</span>
 </span><span id="L-39"><a href="#L-39"><span class="linenos"> 39</span></a><span class="sd">            color (str or tuple): The color of the text.</span>
 </span><span id="L-40"><a href="#L-40"><span class="linenos"> 40</span></a><span class="sd">            font_name (str): The text font name.</span>
@@ -471,7 +471,7 @@
 </span><span id="Text-35"><a href="#Text-35"><span class="linenos"> 35</span></a><span class="sd">        Initialize a Text object.</span>
 </span><span id="Text-36"><a href="#Text-36"><span class="linenos"> 36</span></a>
 </span><span id="Text-37"><a href="#Text-37"><span class="linenos"> 37</span></a><span class="sd">        Args:</span>
-</span><span id="Text-38"><a href="#Text-38"><span class="linenos"> 38</span></a><span class="sd">        pos (pos: Tuple[int | float, int | float] | pygame.math.Vector2 | pygame.math.Vector3): The position of the text.</span>
+</span><span id="Text-38"><a href="#Text-38"><span class="linenos"> 38</span></a><span class="sd">            pos (pos: Tuple[int | float, int | float] | pygame.math.Vector2 | pygame.math.Vector3): The position of the text.</span>
 </span><span id="Text-39"><a href="#Text-39"><span class="linenos"> 39</span></a><span class="sd">            text (str): The string to render.</span>
 </span><span id="Text-40"><a href="#Text-40"><span class="linenos"> 40</span></a><span class="sd">            color (str or tuple): The color of the text.</span>
 </span><span id="Text-41"><a href="#Text-41"><span class="linenos"> 41</span></a><span class="sd">            font_name (str): The text font name.</span>
@@ -772,7 +772,7 @@ alignment options, scaling (zoom), and limiting cache size.</p>
 </span><span id="Text.__init__-35"><a href="#Text.__init__-35"><span class="linenos">35</span></a><span class="sd">        Initialize a Text object.</span>
 </span><span id="Text.__init__-36"><a href="#Text.__init__-36"><span class="linenos">36</span></a>
 </span><span id="Text.__init__-37"><a href="#Text.__init__-37"><span class="linenos">37</span></a><span class="sd">        Args:</span>
-</span><span id="Text.__init__-38"><a href="#Text.__init__-38"><span class="linenos">38</span></a><span class="sd">        pos (pos: Tuple[int | float, int | float] | pygame.math.Vector2 | pygame.math.Vector3): The position of the text.</span>
+</span><span id="Text.__init__-38"><a href="#Text.__init__-38"><span class="linenos">38</span></a><span class="sd">            pos (pos: Tuple[int | float, int | float] | pygame.math.Vector2 | pygame.math.Vector3): The position of the text.</span>
 </span><span id="Text.__init__-39"><a href="#Text.__init__-39"><span class="linenos">39</span></a><span class="sd">            text (str): The string to render.</span>
 </span><span id="Text.__init__-40"><a href="#Text.__init__-40"><span class="linenos">40</span></a><span class="sd">            color (str or tuple): The color of the text.</span>
 </span><span id="Text.__init__-41"><a href="#Text.__init__-41"><span class="linenos">41</span></a><span class="sd">            font_name (str): The text font name.</span>
@@ -803,13 +803,16 @@ alignment options, scaling (zoom), and limiting cache size.</p>
 
             <div class="docstring"><p>Initialize a Text object.</p>
 
-<p>Args:
-pos (pos: Tuple[int | float, int | float] | pygame.math.Vector2 | pygame.math.Vector3): The position of the text.
-    text (str): The string to render.
-    color (str or tuple): The color of the text.
-    font_name (str): The text font name.
-    size (int): Font size.
-    align (str): Alignment of the text: "left", "center", or "right".</p>
+<h6 id="arguments">Arguments:</h6>
+
+<ul>
+<li><strong>pos (pos:</strong>  Tuple[int | float, int | float] | pygame.math.Vector2 | pygame.math.Vector3): The position of the text.</li>
+<li><strong>text (str):</strong>  The string to render.</li>
+<li><strong>color (str or tuple):</strong>  The color of the text.</li>
+<li><strong>font_name (str):</strong>  The text font name.</li>
+<li><strong>size (int):</strong>  Font size.</li>
+<li><strong>align (str):</strong>  Alignment of the text: "left", "center", or "right".</li>
+</ul>
 </div>
 
 
