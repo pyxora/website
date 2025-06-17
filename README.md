@@ -14,7 +14,7 @@ It is a quick overview of the engine and serve as a indroduction to the project.
 ## Structure
 
 - `index.html`: A basic HTML/CSS/JavaScript main page with simple design.
-- `docs/`: Contains API documentation generated using [`pdoc`](https://github.com/mitmproxy/pdoc), directly from the engine's source code.
+- `docs/`: Contains API documentation generated using [pdoc](https://github.com/mitmproxy/pdoc), directly from the engine's source code.
   - The API docs are the documentation of the engine itself.
   - The documentation is automatically updated with every new release.
 
